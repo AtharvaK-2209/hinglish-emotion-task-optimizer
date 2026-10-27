@@ -1,0 +1,13 @@
+# Core Web Framework
+Flask>=3.0.0,<4.0.0
+flask-cors>=4.0.0,<7.0.0
+
+# NLP Processing
+nltk>=3.8.0,<4.0.0
+
+# Deep Learning / Transformers (For Phase 2 Emotion Classification)
+transformers>=4.36.0
+torch>=2.1.0
+
+# Testing
+pytest>=8.0.0

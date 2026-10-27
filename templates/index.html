@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Task Optimizer: Text-Based Hinglish Emotion Analysis</title>
+    <meta name="description" content="AI-Powered Task Optimizer with multilingual Hinglish emotion classification and task recommendations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-badge">
+                <span class="status-dot online"></span>
+                <span>Phase 1 Initialized</span>
+            </div>
+            <h1 class="app-title">AI-Powered Task Optimizer</h1>
+            <p class="app-subtitle">Text-Based Hinglish Emotion Analysis &amp; Productivity Assistant</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="main-content">
+            <section class="card overview-card">
+                <div class="card-header">
+                    <h2>Project Architecture Overview</h2>
+                    <span class="phase-pill">Academic Mini-Project (Phase 1)</span>
+                </div>
+                <p class="description">
+                    This project optimizes workflow and task planning based on emotional tone detected in 
+                    <strong>English</strong>, <strong>Hindi</strong>, and <strong>Hinglish</strong> user inputs.
+                </p>
+
+                <!-- Architecture Modules Grid -->
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-icon">🤖</div>
+                        <h3>Emotion Classifier</h3>
+                        <p>Pretrained Hugging Face model: <code>amaan00z/emotion_xlmr3</code></p>
+                        <div class="module-status">
+                            <span class="badge" id="classifier-status">Ready for Phase 2 Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">🔤</div>
+                        <h3>NLTK Processor</h3>
+                        <p>Linguistic preprocessing, tokenization, and text metric extraction.</p>
+                        <div class="module-status">
+                            <span class="badge" id="nltk-status">Ready for Phase 2 Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-icon">⚡</div>
+                        <h3>Recommendation Engine</h3>
+                        <p>Emotion-informed task scheduling and optimization heuristics.</p>
+                        <div class="module-status">
+                            <span class="badge" id="recom-status">Ready for Phase 2 Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Backend Health Card -->
+            <section class="card health-card">
+                <div class="card-header">
+                    <h2>Backend Health &amp; API Status</h2>
+                    <button id="btn-check-health" class="btn btn-secondary">Refresh Status</button>
+                </div>
+                <div id="health-result" class="health-console">
+                    <div class="console-line">Connecting to <code>/api/health</code>...</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 AI-Powered Task Optimizer &bull; SEM 5 AI Academic Mini-Project</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
