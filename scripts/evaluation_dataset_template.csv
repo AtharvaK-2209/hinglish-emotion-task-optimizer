@@ -1,0 +1,8 @@
+text,language,true_label,acceptable_synonyms,domain_notes
+I finally solved the memory leak after four hours!,English,joy,joy;relief,Technical milestone celebration
+मेरा प्रोजेक्ट आज समय पर पूरा हो गया।,Hindi,joy,joy;gratitude,Devanagari task completion
+Bhai presentation achhi gayi sabne tareef ki.,Hinglish,joy,joy;admiration,Code-mixed positive peer feedback
+The client changed all requirements at the last minute.,English,anger,anger;disapproval,Scope creep frustration
+बहुत ज्यादा काम बचा है और नींद भी आ रही है।,Hindi,sadness,sadness;fatigue,Workload exhaustion
+Kal deadline hai aur deploy fail ho gaya yaar.,Hinglish,fear,fear;sadness,Urgent blocker anxiety
+Weekly team sync is moved to Thursday 3 PM.,English,neutral,neutral,Informational calendar update

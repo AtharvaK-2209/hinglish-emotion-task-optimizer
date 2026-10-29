@@ -1,0 +1,25 @@
+Confusion Matrix: RoBERTa (English GoEmotions) [Hinglish] (N=7)
+Strict Accuracy: 14.3% | Acceptable: 14.3%
+
+True \ Pred   | amuseme |   anger |    fear |     joy | neutral | sadness
+-------------------------------------------------------------------------
+amusement     |       0 |       0 |       0 |       0 |       0 |       0
+anger         |       0 |       0 |       0 |       0 |       1 |       0
+fear          |       1 |       0 |       0 |       0 |       0 |       0
+joy           |       0 |       0 |       0 |       0 |       2 |       0
+neutral       |       0 |       0 |       0 |       0 |       1 |       0
+sadness       |       2 |       0 |       0 |       0 |       0 |       0
+
+Classification Report:
+              precision    recall  f1-score   support
+
+   amusement       0.00      0.00      0.00         0
+       anger       0.00      0.00      0.00         1
+        fear       0.00      0.00      0.00         1
+         joy       0.00      0.00      0.00         2
+     neutral       0.25      1.00      0.40         1
+     sadness       0.00      0.00      0.00         2
+
+    accuracy                           0.14         7
+   macro avg       0.04      0.17      0.07         7
+weighted avg       0.04      0.14      0.06         7

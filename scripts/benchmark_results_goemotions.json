@@ -1,0 +1,395 @@
+{
+  "distilbert_model_id": "bhadresh-savani/distilbert-base-uncased-emotion",
+  "go_emotions_model_id": "SamLowe/roberta-base-go_emotions",
+  "distilbert_acceptable_accuracy_pct": 71.4,
+  "go_emotions_acceptable_accuracy_pct": 71.4,
+  "distilbert_macro_f1": 0.3571,
+  "go_emotions_macro_f1": 0.3,
+  "conversion_disclosure": "GoEmotions uses independent BCE logits. Probabilities are computed via torch.sigmoid(logits). Primary displayed emotion is argmax(sigmoid(logits)). All 28 raw scores and thresholded active labels (>=0.5) are preserved.",
+  "per_example_comparison": [
+    {
+      "index": 1,
+      "text": "I am really excited about my results!",
+      "category": "positive",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy"
+      ],
+      "distilbert": {
+        "predicted_label": "joy",
+        "score": 0.9987,
+        "is_acceptable": true,
+        "top3": [
+          {
+            "label": "joy",
+            "score": 0.9987
+          },
+          {
+            "label": "love",
+            "score": 0.0003
+          },
+          {
+            "label": "anger",
+            "score": 0.0003
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "excitement",
+        "score": 0.8275,
+        "is_acceptable": false,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "excitement",
+            "score": 0.8275
+          }
+        ],
+        "top3": [
+          {
+            "label": "excitement",
+            "score": 0.8275
+          },
+          {
+            "label": "joy",
+            "score": 0.0459
+          },
+          {
+            "label": "neutral",
+            "score": 0.0379
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "text": "My teammate did an amazing job on this project.",
+      "category": "positive",
+      "expected_label": "admiration",
+      "acceptable_labels": [
+        "admiration",
+        "joy"
+      ],
+      "distilbert": {
+        "predicted_label": "surprise",
+        "score": 0.5261,
+        "is_acceptable": false,
+        "top3": [
+          {
+            "label": "surprise",
+            "score": 0.5261
+          },
+          {
+            "label": "joy",
+            "score": 0.4584
+          },
+          {
+            "label": "fear",
+            "score": 0.0059
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "admiration",
+        "score": 0.9417,
+        "is_acceptable": true,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "admiration",
+            "score": 0.9417
+          }
+        ],
+        "top3": [
+          {
+            "label": "admiration",
+            "score": 0.9417
+          },
+          {
+            "label": "approval",
+            "score": 0.0461
+          },
+          {
+            "label": "neutral",
+            "score": 0.0316
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "text": "I cannot believe I won the competition!",
+      "category": "positive / surprise",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy",
+        "surprise"
+      ],
+      "distilbert": {
+        "predicted_label": "joy",
+        "score": 0.9949,
+        "is_acceptable": true,
+        "top3": [
+          {
+            "label": "joy",
+            "score": 0.9949
+          },
+          {
+            "label": "anger",
+            "score": 0.0014
+          },
+          {
+            "label": "sadness",
+            "score": 0.0012
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "surprise",
+        "score": 0.751,
+        "is_acceptable": true,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "surprise",
+            "score": 0.751
+          }
+        ],
+        "top3": [
+          {
+            "label": "surprise",
+            "score": 0.751
+          },
+          {
+            "label": "excitement",
+            "score": 0.3307
+          },
+          {
+            "label": "admiration",
+            "score": 0.0563
+          }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "text": "I am worried that I will fail tomorrow's exam.",
+      "category": "negative",
+      "expected_label": "fear",
+      "acceptable_labels": [
+        "fear",
+        "sadness"
+      ],
+      "distilbert": {
+        "predicted_label": "fear",
+        "score": 0.9677,
+        "is_acceptable": true,
+        "top3": [
+          {
+            "label": "fear",
+            "score": 0.9677
+          },
+          {
+            "label": "anger",
+            "score": 0.0225
+          },
+          {
+            "label": "sadness",
+            "score": 0.0068
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "nervousness",
+        "score": 0.541,
+        "is_acceptable": false,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "nervousness",
+            "score": 0.541
+          }
+        ],
+        "top3": [
+          {
+            "label": "nervousness",
+            "score": 0.541
+          },
+          {
+            "label": "fear",
+            "score": 0.4945
+          },
+          {
+            "label": "sadness",
+            "score": 0.0708
+          }
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "text": "I am furious that they ignored my work.",
+      "category": "negative",
+      "expected_label": "anger",
+      "acceptable_labels": [
+        "anger",
+        "disapproval"
+      ],
+      "distilbert": {
+        "predicted_label": "anger",
+        "score": 0.9956,
+        "is_acceptable": true,
+        "top3": [
+          {
+            "label": "anger",
+            "score": 0.9956
+          },
+          {
+            "label": "sadness",
+            "score": 0.0031
+          },
+          {
+            "label": "fear",
+            "score": 0.0005
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "anger",
+        "score": 0.8263,
+        "is_acceptable": true,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "anger",
+            "score": 0.8263
+          }
+        ],
+        "top3": [
+          {
+            "label": "anger",
+            "score": 0.8263
+          },
+          {
+            "label": "annoyance",
+            "score": 0.1365
+          },
+          {
+            "label": "neutral",
+            "score": 0.1007
+          }
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "text": "I worked on this all night, and nothing is working.",
+      "category": "indirect negative",
+      "expected_label": "sadness",
+      "acceptable_labels": [
+        "sadness",
+        "anger",
+        "disappointment"
+      ],
+      "distilbert": {
+        "predicted_label": "anger",
+        "score": 0.8543,
+        "is_acceptable": true,
+        "top3": [
+          {
+            "label": "anger",
+            "score": 0.8543
+          },
+          {
+            "label": "joy",
+            "score": 0.1046
+          },
+          {
+            "label": "sadness",
+            "score": 0.0214
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "disappointment",
+        "score": 0.6724,
+        "is_acceptable": true,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "disappointment",
+            "score": 0.6724
+          }
+        ],
+        "top3": [
+          {
+            "label": "disappointment",
+            "score": 0.6724
+          },
+          {
+            "label": "neutral",
+            "score": 0.2522
+          },
+          {
+            "label": "annoyance",
+            "score": 0.1972
+          }
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "text": "The meeting starts at 10 AM.",
+      "category": "neutral",
+      "expected_label": "neutral",
+      "acceptable_labels": [
+        "neutral"
+      ],
+      "distilbert": {
+        "predicted_label": "anger",
+        "score": 0.4808,
+        "is_acceptable": false,
+        "top3": [
+          {
+            "label": "anger",
+            "score": 0.4808
+          },
+          {
+            "label": "joy",
+            "score": 0.3103
+          },
+          {
+            "label": "fear",
+            "score": 0.1776
+          }
+        ]
+      },
+      "go_emotions": {
+        "predicted_label": "neutral",
+        "score": 0.9232,
+        "is_acceptable": true,
+        "conversion_method": "argmax(sigmoid(logits))",
+        "active_threshold_0_5": [
+          {
+            "label": "neutral",
+            "score": 0.9232
+          }
+        ],
+        "top3": [
+          {
+            "label": "neutral",
+            "score": 0.9232
+          },
+          {
+            "label": "approval",
+            "score": 0.0382
+          },
+          {
+            "label": "realization",
+            "score": 0.0142
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+True\Pred,admiration,anger,fear,joy,neutral,sadness
+admiration,0,0,0,0,1,0
+anger,0,0,0,0,1,0
+fear,0,0,0,0,1,0
+joy,0,0,0,0,2,0
+neutral,0,0,0,0,1,0
+sadness,0,0,0,0,1,0

@@ -1,0 +1,2519 @@
+{
+  "device": "mps",
+  "candidates": [
+    {
+      "id": "amaan00z/emotion_xlmr3",
+      "short_name": "emotion_xlmr3",
+      "intended_language": "Hinglish (Code-Mixed)",
+      "base_model": "FacebookAI/xlm-roberta-base",
+      "architecture": "XLMRobertaForSequenceClassification",
+      "task_type": "single_label_classification",
+      "notes": "Fine-tuned on 25.6k Hinglish social-media posts; lacks pure English and Devanagari training data."
+    },
+    {
+      "id": "bhadresh-savani/distilbert-base-uncased-emotion",
+      "short_name": "distilbert_emotion",
+      "intended_language": "English",
+      "base_model": "distilbert-base-uncased",
+      "architecture": "DistilBertForSequenceClassification",
+      "task_type": "single_label_classification",
+      "notes": "Fine-tuned on Saravia et al. English emotion dataset (6 labels). Has no neutral class."
+    },
+    {
+      "id": "vashuag/HindiEmotion",
+      "short_name": "hindi_indicbert",
+      "intended_language": "Hindi (Devanagari)",
+      "base_model": "ai4bharat/indic-bert",
+      "architecture": "AlbertForSequenceClassification",
+      "task_type": "single_label_classification",
+      "notes": "Fine-tuned on utkarsharora100/google_go_emotions_hindi_translated for Devanagari Hindi (7 labels)."
+    },
+    {
+      "id": "SamLowe/roberta-base-go_emotions",
+      "short_name": "roberta_go_emotions",
+      "intended_language": "English (Multi-label GoEmotions)",
+      "base_model": "roberta-base",
+      "architecture": "RobertaForSequenceClassification",
+      "task_type": "multi_label_classification",
+      "notes": "Fine-tuned on Google GoEmotions (58k Reddit comments, 28 labels). Multi-label sigmoid head."
+    }
+  ],
+  "summary": {
+    "amaan00z/emotion_xlmr3": {
+      "short_name": "emotion_xlmr3",
+      "english_accuracy_pct": 14.3,
+      "hindi_accuracy_pct": 57.1,
+      "hinglish_accuracy_pct": 42.9,
+      "overall_accuracy_pct": 38.1
+    },
+    "bhadresh-savani/distilbert-base-uncased-emotion": {
+      "short_name": "distilbert_emotion",
+      "english_accuracy_pct": 71.4,
+      "hindi_accuracy_pct": 42.9,
+      "hinglish_accuracy_pct": 42.9,
+      "overall_accuracy_pct": 52.4
+    },
+    "vashuag/HindiEmotion": {
+      "short_name": "hindi_indicbert",
+      "english_accuracy_pct": 14.3,
+      "hindi_accuracy_pct": 71.4,
+      "hinglish_accuracy_pct": 42.9,
+      "overall_accuracy_pct": 42.9
+    },
+    "SamLowe/roberta-base-go_emotions": {
+      "short_name": "roberta_go_emotions",
+      "english_accuracy_pct": 71.4,
+      "hindi_accuracy_pct": 14.3,
+      "hinglish_accuracy_pct": 14.3,
+      "overall_accuracy_pct": 33.3
+    }
+  },
+  "detailed_results": [
+    {
+      "language": "English",
+      "text": "I am really excited about my results!",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "joy",
+          "top_score": 0.9997,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.9997
+            },
+            {
+              "label": "admiration",
+              "score": 0.0001
+            },
+            {
+              "label": "anger",
+              "score": 0.0
+            }
+          ],
+          "latency_ms": 156.64
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.9987,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.9987
+            },
+            {
+              "label": "love",
+              "score": 0.0003
+            },
+            {
+              "label": "anger",
+              "score": 0.0003
+            }
+          ],
+          "latency_ms": 4.42
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9669,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9669
+            },
+            {
+              "label": "surprise",
+              "score": 0.014
+            },
+            {
+              "label": "anger",
+              "score": 0.0103
+            }
+          ],
+          "latency_ms": 5.54
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "excitement",
+          "top_score": 0.8275,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "excitement",
+              "score": 0.8275
+            },
+            {
+              "label": "joy",
+              "score": 0.0459
+            },
+            {
+              "label": "neutral",
+              "score": 0.0379
+            }
+          ],
+          "latency_ms": 2.91,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "excitement",
+              "score": 0.8275
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "English",
+      "text": "My teammate did an amazing job on this project.",
+      "expected_label": "admiration",
+      "acceptable_labels": [
+        "admiration",
+        "joy"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.5225,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.5225
+            },
+            {
+              "label": "admiration",
+              "score": 0.4641
+            },
+            {
+              "label": "disgust",
+              "score": 0.0063
+            }
+          ],
+          "latency_ms": 4.09
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "surprise",
+          "top_score": 0.5261,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "surprise",
+              "score": 0.5261
+            },
+            {
+              "label": "joy",
+              "score": 0.4584
+            },
+            {
+              "label": "fear",
+              "score": 0.0059
+            }
+          ],
+          "latency_ms": 1.76
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9813,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9813
+            },
+            {
+              "label": "anger",
+              "score": 0.0065
+            },
+            {
+              "label": "surprise",
+              "score": 0.0036
+            }
+          ],
+          "latency_ms": 3.05
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "admiration",
+          "top_score": 0.9417,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "admiration",
+              "score": 0.9417
+            },
+            {
+              "label": "approval",
+              "score": 0.0461
+            },
+            {
+              "label": "neutral",
+              "score": 0.0316
+            }
+          ],
+          "latency_ms": 2.96,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "admiration",
+              "score": 0.9417
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "English",
+      "text": "I cannot believe I won the competition!",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy",
+        "surprise"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9949,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9949
+            },
+            {
+              "label": "disgust",
+              "score": 0.0036
+            },
+            {
+              "label": "surprise",
+              "score": 0.0006
+            }
+          ],
+          "latency_ms": 3.24
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.9949,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.9949
+            },
+            {
+              "label": "anger",
+              "score": 0.0014
+            },
+            {
+              "label": "sadness",
+              "score": 0.0012
+            }
+          ],
+          "latency_ms": 1.94
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9597,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9597
+            },
+            {
+              "label": "surprise",
+              "score": 0.0194
+            },
+            {
+              "label": "anger",
+              "score": 0.0119
+            }
+          ],
+          "latency_ms": 3.22
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "surprise",
+          "top_score": 0.751,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "surprise",
+              "score": 0.751
+            },
+            {
+              "label": "excitement",
+              "score": 0.3307
+            },
+            {
+              "label": "admiration",
+              "score": 0.0563
+            }
+          ],
+          "latency_ms": 3.06,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "surprise",
+              "score": 0.751
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "English",
+      "text": "I am worried that I will fail tomorrow's exam.",
+      "expected_label": "fear",
+      "acceptable_labels": [
+        "fear",
+        "sadness"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9839,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9839
+            },
+            {
+              "label": "sadness",
+              "score": 0.0075
+            },
+            {
+              "label": "fear",
+              "score": 0.0052
+            }
+          ],
+          "latency_ms": 3.09
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "fear",
+          "top_score": 0.9677,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.9677
+            },
+            {
+              "label": "anger",
+              "score": 0.0225
+            },
+            {
+              "label": "sadness",
+              "score": 0.0068
+            }
+          ],
+          "latency_ms": 1.94
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9242,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9242
+            },
+            {
+              "label": "anger",
+              "score": 0.0548
+            },
+            {
+              "label": "disgust",
+              "score": 0.0054
+            }
+          ],
+          "latency_ms": 2.96
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "nervousness",
+          "top_score": 0.541,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "nervousness",
+              "score": 0.541
+            },
+            {
+              "label": "fear",
+              "score": 0.4945
+            },
+            {
+              "label": "sadness",
+              "score": 0.0708
+            }
+          ],
+          "latency_ms": 3.13,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "nervousness",
+              "score": 0.541
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "English",
+      "text": "I am furious that they ignored my work.",
+      "expected_label": "anger",
+      "acceptable_labels": [
+        "anger",
+        "disapproval"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9677,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9677
+            },
+            {
+              "label": "disgust",
+              "score": 0.0268
+            },
+            {
+              "label": "sadness",
+              "score": 0.0026
+            }
+          ],
+          "latency_ms": 2.99
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.9956,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.9956
+            },
+            {
+              "label": "sadness",
+              "score": 0.0031
+            },
+            {
+              "label": "fear",
+              "score": 0.0005
+            }
+          ],
+          "latency_ms": 1.9
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9746,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9746
+            },
+            {
+              "label": "anger",
+              "score": 0.0167
+            },
+            {
+              "label": "disgust",
+              "score": 0.0031
+            }
+          ],
+          "latency_ms": 2.9
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "anger",
+          "top_score": 0.8263,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.8263
+            },
+            {
+              "label": "annoyance",
+              "score": 0.1365
+            },
+            {
+              "label": "neutral",
+              "score": 0.1007
+            }
+          ],
+          "latency_ms": 2.85,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "anger",
+              "score": 0.8263
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "English",
+      "text": "I worked on this all night, and nothing is working.",
+      "expected_label": "sadness",
+      "acceptable_labels": [
+        "sadness",
+        "anger",
+        "disappointment"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9994,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9994
+            },
+            {
+              "label": "disgust",
+              "score": 0.0004
+            },
+            {
+              "label": "sadness",
+              "score": 0.0001
+            }
+          ],
+          "latency_ms": 3.02
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.8543,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.8543
+            },
+            {
+              "label": "joy",
+              "score": 0.1046
+            },
+            {
+              "label": "sadness",
+              "score": 0.0214
+            }
+          ],
+          "latency_ms": 1.86
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.8825,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.8825
+            },
+            {
+              "label": "joy",
+              "score": 0.101
+            },
+            {
+              "label": "surprise",
+              "score": 0.0059
+            }
+          ],
+          "latency_ms": 2.88
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "disappointment",
+          "top_score": 0.6724,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "disappointment",
+              "score": 0.6724
+            },
+            {
+              "label": "neutral",
+              "score": 0.2522
+            },
+            {
+              "label": "annoyance",
+              "score": 0.1972
+            }
+          ],
+          "latency_ms": 3.05,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "disappointment",
+              "score": 0.6724
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "English",
+      "text": "The meeting starts at 10 AM.",
+      "expected_label": "neutral",
+      "acceptable_labels": [
+        "neutral"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "joy",
+          "top_score": 0.7981,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7981
+            },
+            {
+              "label": "neutral",
+              "score": 0.079
+            },
+            {
+              "label": "surprise",
+              "score": 0.0388
+            }
+          ],
+          "latency_ms": 3.02
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.4808,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.4808
+            },
+            {
+              "label": "joy",
+              "score": 0.3103
+            },
+            {
+              "label": "fear",
+              "score": 0.1776
+            }
+          ],
+          "latency_ms": 2.96
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.7577,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.7577
+            },
+            {
+              "label": "surprise",
+              "score": 0.1016
+            },
+            {
+              "label": "sadness",
+              "score": 0.0504
+            }
+          ],
+          "latency_ms": 3.5
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.9232,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9232
+            },
+            {
+              "label": "approval",
+              "score": 0.0382
+            },
+            {
+              "label": "realization",
+              "score": 0.0142
+            }
+          ],
+          "latency_ms": 3.13,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.9232
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "मुझे आज बहुत खुशी हो रही है।",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "joy",
+          "top_score": 0.9998,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.9998
+            },
+            {
+              "label": "anger",
+              "score": 0.0
+            },
+            {
+              "label": "fear",
+              "score": 0.0
+            }
+          ],
+          "latency_ms": 3.71
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.7327,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7327
+            },
+            {
+              "label": "anger",
+              "score": 0.108
+            },
+            {
+              "label": "fear",
+              "score": 0.0923
+            }
+          ],
+          "latency_ms": 3.14
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "joy",
+          "top_score": 0.9791,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.9791
+            },
+            {
+              "label": "neutral",
+              "score": 0.0126
+            },
+            {
+              "label": "surprise",
+              "score": 0.0023
+            }
+          ],
+          "latency_ms": 3.58
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.7996,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.7996
+            },
+            {
+              "label": "approval",
+              "score": 0.1274
+            },
+            {
+              "label": "realization",
+              "score": 0.034
+            }
+          ],
+          "latency_ms": 5.24,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.7996
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "अरे! मुझे विश्वास नहीं हो रहा कि मैं जीत गया!",
+      "expected_label": "surprise",
+      "acceptable_labels": [
+        "surprise",
+        "joy"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9985,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9985
+            },
+            {
+              "label": "disgust",
+              "score": 0.001
+            },
+            {
+              "label": "surprise",
+              "score": 0.0002
+            }
+          ],
+          "latency_ms": 3.55
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.7454,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7454
+            },
+            {
+              "label": "anger",
+              "score": 0.128
+            },
+            {
+              "label": "fear",
+              "score": 0.0706
+            }
+          ],
+          "latency_ms": 2.97
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "surprise",
+          "top_score": 0.9221,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "surprise",
+              "score": 0.9221
+            },
+            {
+              "label": "neutral",
+              "score": 0.0365
+            },
+            {
+              "label": "anger",
+              "score": 0.0127
+            }
+          ],
+          "latency_ms": 3.54
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.7539,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.7539
+            },
+            {
+              "label": "approval",
+              "score": 0.1968
+            },
+            {
+              "label": "realization",
+              "score": 0.0404
+            }
+          ],
+          "latency_ms": 4.47,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.7539
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "उसका ऐसा व्यवहार बिल्कुल गलत है।",
+      "expected_label": "disapproval",
+      "acceptable_labels": [
+        "disapproval",
+        "anger"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9612,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9612
+            },
+            {
+              "label": "disapproval",
+              "score": 0.0303
+            },
+            {
+              "label": "anger",
+              "score": 0.0056
+            }
+          ],
+          "latency_ms": 3.82
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.7525,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7525
+            },
+            {
+              "label": "anger",
+              "score": 0.0978
+            },
+            {
+              "label": "fear",
+              "score": 0.0862
+            }
+          ],
+          "latency_ms": 2.44
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.3962,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.3962
+            },
+            {
+              "label": "anger",
+              "score": 0.3573
+            },
+            {
+              "label": "disgust",
+              "score": 0.1993
+            }
+          ],
+          "latency_ms": 3.92
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.868,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.868
+            },
+            {
+              "label": "approval",
+              "score": 0.1026
+            },
+            {
+              "label": "realization",
+              "score": 0.0336
+            }
+          ],
+          "latency_ms": 6.37,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.868
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "मुझे डर लग रहा है कि परीक्षा में क्या होगा।",
+      "expected_label": "fear",
+      "acceptable_labels": [
+        "fear"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "fear",
+          "top_score": 0.9988,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.9988
+            },
+            {
+              "label": "surprise",
+              "score": 0.0004
+            },
+            {
+              "label": "sadness",
+              "score": 0.0002
+            }
+          ],
+          "latency_ms": 3.91
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.6772,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.6772
+            },
+            {
+              "label": "anger",
+              "score": 0.1513
+            },
+            {
+              "label": "fear",
+              "score": 0.0956
+            }
+          ],
+          "latency_ms": 2.38
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "fear",
+          "top_score": 0.9069,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.9069
+            },
+            {
+              "label": "neutral",
+              "score": 0.0401
+            },
+            {
+              "label": "disgust",
+              "score": 0.0197
+            }
+          ],
+          "latency_ms": 3.86
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.7339,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.7339
+            },
+            {
+              "label": "approval",
+              "score": 0.2332
+            },
+            {
+              "label": "realization",
+              "score": 0.0601
+            }
+          ],
+          "latency_ms": 3.96,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.7339
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "मैं बहुत उदास हूँ और कुछ करने का मन नहीं है।",
+      "expected_label": "sadness",
+      "acceptable_labels": [
+        "sadness"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "sadness",
+          "top_score": 0.9988,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "sadness",
+              "score": 0.9988
+            },
+            {
+              "label": "disgust",
+              "score": 0.0004
+            },
+            {
+              "label": "neutral",
+              "score": 0.0003
+            }
+          ],
+          "latency_ms": 3.82
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.6646,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.6646
+            },
+            {
+              "label": "anger",
+              "score": 0.141
+            },
+            {
+              "label": "fear",
+              "score": 0.1166
+            }
+          ],
+          "latency_ms": 2.24
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.7352,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.7352
+            },
+            {
+              "label": "sadness",
+              "score": 0.1692
+            },
+            {
+              "label": "fear",
+              "score": 0.0342
+            }
+          ],
+          "latency_ms": 3.49
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.8051,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.8051
+            },
+            {
+              "label": "approval",
+              "score": 0.1097
+            },
+            {
+              "label": "realization",
+              "score": 0.0523
+            }
+          ],
+          "latency_ms": 3.77,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.8051
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "बिजली जल्दी आ गई, बहुत शुक्रिया।",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy",
+        "gratitude"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "fear",
+          "top_score": 0.9994,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.9994
+            },
+            {
+              "label": "anger",
+              "score": 0.0001
+            },
+            {
+              "label": "disgust",
+              "score": 0.0001
+            }
+          ],
+          "latency_ms": 4.25
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.7616,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7616
+            },
+            {
+              "label": "anger",
+              "score": 0.0977
+            },
+            {
+              "label": "fear",
+              "score": 0.0817
+            }
+          ],
+          "latency_ms": 2.38
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "joy",
+          "top_score": 0.7667,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7667
+            },
+            {
+              "label": "neutral",
+              "score": 0.1995
+            },
+            {
+              "label": "fear",
+              "score": 0.0102
+            }
+          ],
+          "latency_ms": 3.84
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.8697,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.8697
+            },
+            {
+              "label": "approval",
+              "score": 0.1293
+            },
+            {
+              "label": "realization",
+              "score": 0.03
+            }
+          ],
+          "latency_ms": 3.75,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.8697
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hindi",
+      "text": "बैठक सुबह 10 बजे शुरू होगी।",
+      "expected_label": "neutral",
+      "acceptable_labels": [
+        "neutral"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9892,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9892
+            },
+            {
+              "label": "surprise",
+              "score": 0.0041
+            },
+            {
+              "label": "fear",
+              "score": 0.0021
+            }
+          ],
+          "latency_ms": 4.2
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.7219,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.7219
+            },
+            {
+              "label": "anger",
+              "score": 0.1247
+            },
+            {
+              "label": "fear",
+              "score": 0.0802
+            }
+          ],
+          "latency_ms": 4.07
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9881,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9881
+            },
+            {
+              "label": "surprise",
+              "score": 0.0045
+            },
+            {
+              "label": "joy",
+              "score": 0.0021
+            }
+          ],
+          "latency_ms": 4.18
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.8972,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.8972
+            },
+            {
+              "label": "approval",
+              "score": 0.0668
+            },
+            {
+              "label": "realization",
+              "score": 0.0299
+            }
+          ],
+          "latency_ms": 4.47,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.8972
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "Yaar, aaj bahut tension ho raha hai.",
+      "expected_label": "sadness",
+      "acceptable_labels": [
+        "sadness",
+        "fear"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "sadness",
+          "top_score": 0.995,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "sadness",
+              "score": 0.995
+            },
+            {
+              "label": "fear",
+              "score": 0.0042
+            },
+            {
+              "label": "surprise",
+              "score": 0.0002
+            }
+          ],
+          "latency_ms": 4.47
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.6494,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.6494
+            },
+            {
+              "label": "joy",
+              "score": 0.1752
+            },
+            {
+              "label": "fear",
+              "score": 0.1196
+            }
+          ],
+          "latency_ms": 2.56
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "disgust",
+          "top_score": 0.614,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "disgust",
+              "score": 0.614
+            },
+            {
+              "label": "anger",
+              "score": 0.2828
+            },
+            {
+              "label": "sadness",
+              "score": 0.0462
+            }
+          ],
+          "latency_ms": 3.86
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "amusement",
+          "top_score": 0.8805,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "amusement",
+              "score": 0.8805
+            },
+            {
+              "label": "neutral",
+              "score": 0.0873
+            },
+            {
+              "label": "joy",
+              "score": 0.0779
+            }
+          ],
+          "latency_ms": 4.14,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "amusement",
+              "score": 0.8805
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "Kya! Mujhe yakeen nahi ho raha ki main jeet gaya!",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy",
+        "surprise"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "sadness",
+          "top_score": 0.9997,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "sadness",
+              "score": 0.9997
+            },
+            {
+              "label": "fear",
+              "score": 0.0001
+            },
+            {
+              "label": "anger",
+              "score": 0.0
+            }
+          ],
+          "latency_ms": 3.85
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "joy",
+          "top_score": 0.6599,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "joy",
+              "score": 0.6599
+            },
+            {
+              "label": "anger",
+              "score": 0.2889
+            },
+            {
+              "label": "fear",
+              "score": 0.0218
+            }
+          ],
+          "latency_ms": 2.21
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "anger",
+          "top_score": 0.9049,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.9049
+            },
+            {
+              "label": "disgust",
+              "score": 0.0428
+            },
+            {
+              "label": "neutral",
+              "score": 0.0403
+            }
+          ],
+          "latency_ms": 4.16
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.6433,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.6433
+            },
+            {
+              "label": "amusement",
+              "score": 0.0884
+            },
+            {
+              "label": "approval",
+              "score": 0.0685
+            }
+          ],
+          "latency_ms": 3.95,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.6433
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "Bhai party karenge aaj bahut maza aaya!",
+      "expected_label": "joy",
+      "acceptable_labels": [
+        "joy"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "fear",
+          "top_score": 0.7583,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.7583
+            },
+            {
+              "label": "sadness",
+              "score": 0.2318
+            },
+            {
+              "label": "joy",
+              "score": 0.0045
+            }
+          ],
+          "latency_ms": 3.83
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.7859,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.7859
+            },
+            {
+              "label": "joy",
+              "score": 0.1752
+            },
+            {
+              "label": "sadness",
+              "score": 0.0173
+            }
+          ],
+          "latency_ms": 2.18
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "anger",
+          "top_score": 0.7877,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.7877
+            },
+            {
+              "label": "neutral",
+              "score": 0.1646
+            },
+            {
+              "label": "disgust",
+              "score": 0.0306
+            }
+          ],
+          "latency_ms": 3.5
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.9213,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9213
+            },
+            {
+              "label": "joy",
+              "score": 0.0221
+            },
+            {
+              "label": "excitement",
+              "score": 0.0204
+            }
+          ],
+          "latency_ms": 3.93,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.9213
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "Arre yaar, dimag kharab kar diya inhone.",
+      "expected_label": "anger",
+      "acceptable_labels": [
+        "anger",
+        "disapproval"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "anger",
+          "top_score": 0.9991,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.9991
+            },
+            {
+              "label": "fear",
+              "score": 0.0007
+            },
+            {
+              "label": "surprise",
+              "score": 0.0001
+            }
+          ],
+          "latency_ms": 3.64
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.4565,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.4565
+            },
+            {
+              "label": "joy",
+              "score": 0.3579
+            },
+            {
+              "label": "fear",
+              "score": 0.1144
+            }
+          ],
+          "latency_ms": 2.15
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "anger",
+          "top_score": 0.6457,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.6457
+            },
+            {
+              "label": "neutral",
+              "score": 0.178
+            },
+            {
+              "label": "disgust",
+              "score": 0.1528
+            }
+          ],
+          "latency_ms": 3.43
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.9609,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9609
+            },
+            {
+              "label": "approval",
+              "score": 0.0131
+            },
+            {
+              "label": "annoyance",
+              "score": 0.0093
+            }
+          ],
+          "latency_ms": 3.57,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.9609
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "Exam me fail hone ka darr lag raha hai.",
+      "expected_label": "fear",
+      "acceptable_labels": [
+        "fear"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "fear",
+          "top_score": 0.9998,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.9998
+            },
+            {
+              "label": "admiration",
+              "score": 0.0001
+            },
+            {
+              "label": "anger",
+              "score": 0.0
+            }
+          ],
+          "latency_ms": 3.49
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.4273,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.4273
+            },
+            {
+              "label": "fear",
+              "score": 0.3219
+            },
+            {
+              "label": "joy",
+              "score": 0.1902
+            }
+          ],
+          "latency_ms": 2.04
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9387,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9387
+            },
+            {
+              "label": "anger",
+              "score": 0.0302
+            },
+            {
+              "label": "joy",
+              "score": 0.0224
+            }
+          ],
+          "latency_ms": 3.31
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "amusement",
+          "top_score": 0.7901,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "amusement",
+              "score": 0.7901
+            },
+            {
+              "label": "neutral",
+              "score": 0.2186
+            },
+            {
+              "label": "joy",
+              "score": 0.0343
+            }
+          ],
+          "latency_ms": 3.53,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "amusement",
+              "score": 0.7901
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "I worked on this all night aur kuch bhi kaam nahi kar raha.",
+      "expected_label": "sadness",
+      "acceptable_labels": [
+        "sadness",
+        "anger",
+        "disappointment"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "neutral",
+          "top_score": 0.9991,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9991
+            },
+            {
+              "label": "disgust",
+              "score": 0.0006
+            },
+            {
+              "label": "anger",
+              "score": 0.0001
+            }
+          ],
+          "latency_ms": 3.66
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.6238,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.6238
+            },
+            {
+              "label": "joy",
+              "score": 0.2728
+            },
+            {
+              "label": "sadness",
+              "score": 0.0608
+            }
+          ],
+          "latency_ms": 2.12
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "anger",
+          "top_score": 0.7915,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.7915
+            },
+            {
+              "label": "neutral",
+              "score": 0.0903
+            },
+            {
+              "label": "disgust",
+              "score": 0.0678
+            }
+          ],
+          "latency_ms": 3.85
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "amusement",
+          "top_score": 0.7412,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "amusement",
+              "score": 0.7412
+            },
+            {
+              "label": "neutral",
+              "score": 0.2477
+            },
+            {
+              "label": "joy",
+              "score": 0.0554
+            }
+          ],
+          "latency_ms": 3.43,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "amusement",
+              "score": 0.7412
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    },
+    {
+      "language": "Hinglish",
+      "text": "Kal subah 10 baje team meeting hai.",
+      "expected_label": "neutral",
+      "acceptable_labels": [
+        "neutral"
+      ],
+      "predictions": {
+        "amaan00z/emotion_xlmr3": {
+          "top_label": "fear",
+          "top_score": 0.9991,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "fear",
+              "score": 0.9991
+            },
+            {
+              "label": "joy",
+              "score": 0.0005
+            },
+            {
+              "label": "anger",
+              "score": 0.0001
+            }
+          ],
+          "latency_ms": 4.08
+        },
+        "bhadresh-savani/distilbert-base-uncased-emotion": {
+          "top_label": "anger",
+          "top_score": 0.5966,
+          "is_acceptable": false,
+          "ranked_top3": [
+            {
+              "label": "anger",
+              "score": 0.5966
+            },
+            {
+              "label": "joy",
+              "score": 0.2226
+            },
+            {
+              "label": "fear",
+              "score": 0.1618
+            }
+          ],
+          "latency_ms": 2.51
+        },
+        "vashuag/HindiEmotion": {
+          "top_label": "neutral",
+          "top_score": 0.9864,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.9864
+            },
+            {
+              "label": "sadness",
+              "score": 0.0041
+            },
+            {
+              "label": "fear",
+              "score": 0.0027
+            }
+          ],
+          "latency_ms": 3.48
+        },
+        "SamLowe/roberta-base-go_emotions": {
+          "top_label": "neutral",
+          "top_score": 0.7293,
+          "is_acceptable": true,
+          "ranked_top3": [
+            {
+              "label": "neutral",
+              "score": 0.7293
+            },
+            {
+              "label": "amusement",
+              "score": 0.1392
+            },
+            {
+              "label": "joy",
+              "score": 0.0297
+            }
+          ],
+          "latency_ms": 3.8,
+          "active_labels_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.7293
+            }
+          ],
+          "conversion_method": "argmax(sigmoid(logits))"
+        }
+      }
+    }
+  ],
+  "english_candidate_comparison": {
+    "distilbert_model_id": "bhadresh-savani/distilbert-base-uncased-emotion",
+    "go_emotions_model_id": "SamLowe/roberta-base-go_emotions",
+    "distilbert_acceptable_accuracy_pct": 71.4,
+    "go_emotions_acceptable_accuracy_pct": 71.4,
+    "distilbert_macro_f1": 0.3571,
+    "go_emotions_macro_f1": 0.3,
+    "conversion_disclosure": "GoEmotions uses independent BCE logits. Probabilities are computed via torch.sigmoid(logits). Primary displayed emotion is argmax(sigmoid(logits)). All 28 raw scores and thresholded active labels (>=0.5) are preserved.",
+    "per_example_comparison": [
+      {
+        "index": 1,
+        "text": "I am really excited about my results!",
+        "category": "positive",
+        "expected_label": "joy",
+        "acceptable_labels": [
+          "joy"
+        ],
+        "distilbert": {
+          "predicted_label": "joy",
+          "score": 0.9987,
+          "is_acceptable": true,
+          "top3": [
+            {
+              "label": "joy",
+              "score": 0.9987
+            },
+            {
+              "label": "love",
+              "score": 0.0003
+            },
+            {
+              "label": "anger",
+              "score": 0.0003
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "excitement",
+          "score": 0.8275,
+          "is_acceptable": false,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "excitement",
+              "score": 0.8275
+            }
+          ],
+          "top3": [
+            {
+              "label": "excitement",
+              "score": 0.8275
+            },
+            {
+              "label": "joy",
+              "score": 0.0459
+            },
+            {
+              "label": "neutral",
+              "score": 0.0379
+            }
+          ]
+        }
+      },
+      {
+        "index": 2,
+        "text": "My teammate did an amazing job on this project.",
+        "category": "positive",
+        "expected_label": "admiration",
+        "acceptable_labels": [
+          "admiration",
+          "joy"
+        ],
+        "distilbert": {
+          "predicted_label": "surprise",
+          "score": 0.5261,
+          "is_acceptable": false,
+          "top3": [
+            {
+              "label": "surprise",
+              "score": 0.5261
+            },
+            {
+              "label": "joy",
+              "score": 0.4584
+            },
+            {
+              "label": "fear",
+              "score": 0.0059
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "admiration",
+          "score": 0.9417,
+          "is_acceptable": true,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "admiration",
+              "score": 0.9417
+            }
+          ],
+          "top3": [
+            {
+              "label": "admiration",
+              "score": 0.9417
+            },
+            {
+              "label": "approval",
+              "score": 0.0461
+            },
+            {
+              "label": "neutral",
+              "score": 0.0316
+            }
+          ]
+        }
+      },
+      {
+        "index": 3,
+        "text": "I cannot believe I won the competition!",
+        "category": "positive / surprise",
+        "expected_label": "joy",
+        "acceptable_labels": [
+          "joy",
+          "surprise"
+        ],
+        "distilbert": {
+          "predicted_label": "joy",
+          "score": 0.9949,
+          "is_acceptable": true,
+          "top3": [
+            {
+              "label": "joy",
+              "score": 0.9949
+            },
+            {
+              "label": "anger",
+              "score": 0.0014
+            },
+            {
+              "label": "sadness",
+              "score": 0.0012
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "surprise",
+          "score": 0.751,
+          "is_acceptable": true,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "surprise",
+              "score": 0.751
+            }
+          ],
+          "top3": [
+            {
+              "label": "surprise",
+              "score": 0.751
+            },
+            {
+              "label": "excitement",
+              "score": 0.3307
+            },
+            {
+              "label": "admiration",
+              "score": 0.0563
+            }
+          ]
+        }
+      },
+      {
+        "index": 4,
+        "text": "I am worried that I will fail tomorrow's exam.",
+        "category": "negative",
+        "expected_label": "fear",
+        "acceptable_labels": [
+          "fear",
+          "sadness"
+        ],
+        "distilbert": {
+          "predicted_label": "fear",
+          "score": 0.9677,
+          "is_acceptable": true,
+          "top3": [
+            {
+              "label": "fear",
+              "score": 0.9677
+            },
+            {
+              "label": "anger",
+              "score": 0.0225
+            },
+            {
+              "label": "sadness",
+              "score": 0.0068
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "nervousness",
+          "score": 0.541,
+          "is_acceptable": false,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "nervousness",
+              "score": 0.541
+            }
+          ],
+          "top3": [
+            {
+              "label": "nervousness",
+              "score": 0.541
+            },
+            {
+              "label": "fear",
+              "score": 0.4945
+            },
+            {
+              "label": "sadness",
+              "score": 0.0708
+            }
+          ]
+        }
+      },
+      {
+        "index": 5,
+        "text": "I am furious that they ignored my work.",
+        "category": "negative",
+        "expected_label": "anger",
+        "acceptable_labels": [
+          "anger",
+          "disapproval"
+        ],
+        "distilbert": {
+          "predicted_label": "anger",
+          "score": 0.9956,
+          "is_acceptable": true,
+          "top3": [
+            {
+              "label": "anger",
+              "score": 0.9956
+            },
+            {
+              "label": "sadness",
+              "score": 0.0031
+            },
+            {
+              "label": "fear",
+              "score": 0.0005
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "anger",
+          "score": 0.8263,
+          "is_acceptable": true,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "anger",
+              "score": 0.8263
+            }
+          ],
+          "top3": [
+            {
+              "label": "anger",
+              "score": 0.8263
+            },
+            {
+              "label": "annoyance",
+              "score": 0.1365
+            },
+            {
+              "label": "neutral",
+              "score": 0.1007
+            }
+          ]
+        }
+      },
+      {
+        "index": 6,
+        "text": "I worked on this all night, and nothing is working.",
+        "category": "indirect negative",
+        "expected_label": "sadness",
+        "acceptable_labels": [
+          "sadness",
+          "anger",
+          "disappointment"
+        ],
+        "distilbert": {
+          "predicted_label": "anger",
+          "score": 0.8543,
+          "is_acceptable": true,
+          "top3": [
+            {
+              "label": "anger",
+              "score": 0.8543
+            },
+            {
+              "label": "joy",
+              "score": 0.1046
+            },
+            {
+              "label": "sadness",
+              "score": 0.0214
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "disappointment",
+          "score": 0.6724,
+          "is_acceptable": true,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "disappointment",
+              "score": 0.6724
+            }
+          ],
+          "top3": [
+            {
+              "label": "disappointment",
+              "score": 0.6724
+            },
+            {
+              "label": "neutral",
+              "score": 0.2522
+            },
+            {
+              "label": "annoyance",
+              "score": 0.1972
+            }
+          ]
+        }
+      },
+      {
+        "index": 7,
+        "text": "The meeting starts at 10 AM.",
+        "category": "neutral",
+        "expected_label": "neutral",
+        "acceptable_labels": [
+          "neutral"
+        ],
+        "distilbert": {
+          "predicted_label": "anger",
+          "score": 0.4808,
+          "is_acceptable": false,
+          "top3": [
+            {
+              "label": "anger",
+              "score": 0.4808
+            },
+            {
+              "label": "joy",
+              "score": 0.3103
+            },
+            {
+              "label": "fear",
+              "score": 0.1776
+            }
+          ]
+        },
+        "go_emotions": {
+          "predicted_label": "neutral",
+          "score": 0.9232,
+          "is_acceptable": true,
+          "conversion_method": "argmax(sigmoid(logits))",
+          "active_threshold_0_5": [
+            {
+              "label": "neutral",
+              "score": 0.9232
+            }
+          ],
+          "top3": [
+            {
+              "label": "neutral",
+              "score": 0.9232
+            },
+            {
+              "label": "approval",
+              "score": 0.0382
+            },
+            {
+              "label": "realization",
+              "score": 0.0142
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,4566 @@
+{
+  "metadata": {
+    "project": "EmoSync \u2014 Emotion-Aware Productivity Assistant",
+    "total_samples": 21,
+    "language_distribution": {
+      "English": 7,
+      "Hindi": 7,
+      "Hinglish": 7
+    },
+    "models_evaluated": [
+      "amaan00z/emotion_xlmr3",
+      "bhadresh-savani/distilbert-base-uncased-emotion",
+      "vashuag/HindiEmotion",
+      "SamLowe/roberta-base-go_emotions",
+      "ensemble"
+    ],
+    "evaluation_standard": "Scikit-Learn 1.8.0 exact strict matching & benchmark acceptable tolerance"
+  },
+  "results": {
+    "amaan00z/emotion_xlmr3": {
+      "Overall": {
+        "model_key": "amaan00z/emotion_xlmr3",
+        "model_name": "XLM-RoBERTa (Hinglish)",
+        "subset": "Overall",
+        "sample_count": 21,
+        "accuracy_strict": 0.381,
+        "accuracy_acceptable": 0.381,
+        "macro_precision": 0.3556,
+        "macro_recall": 0.2917,
+        "macro_f1": 0.2937,
+        "weighted_precision": 0.4857,
+        "weighted_recall": 0.381,
+        "weighted_f1": 0.3946,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6667,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.4,
+            "recall": 0.6667,
+            "f1_score": 0.5,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.6667,
+            "recall": 0.3333,
+            "f1_score": 0.4444,
+            "support": 6,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.1111,
+            "recall": 0.3333,
+            "f1_score": 0.1667,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.6667,
+            "recall": 0.5,
+            "f1_score": 0.5714,
+            "support": 4,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              2,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.4,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5,
+            "support": 3.0
+          },
+          "joy": {
+            "precision": 0.6666666666666666,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.4444444444444444,
+            "support": 6.0
+          },
+          "neutral": {
+            "precision": 0.1111111111111111,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.16666666666666666,
+            "support": 3.0
+          },
+          "sadness": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
+            "f1-score": 0.5714285714285714,
+            "support": 4.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.38095238095238093,
+          "macro avg": {
+            "precision": 0.3555555555555555,
+            "recall": 0.29166666666666663,
+            "f1-score": 0.2936507936507936,
+            "support": 21.0
+          },
+          "weighted avg": {
+            "precision": 0.48571428571428565,
+            "recall": 0.38095238095238093,
+            "f1-score": 0.39455782312925164,
+            "support": 21.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n  admiration       0.00      0.00      0.00         1\n       anger       1.00      0.50      0.67         2\n disapproval       0.00      0.00      0.00         1\n        fear       0.40      0.67      0.50         3\n         joy       0.67      0.33      0.44         6\n     neutral       0.11      0.33      0.17         3\n     sadness       0.67      0.50      0.57         4\n    surprise       0.00      0.00      0.00         1\n\n    accuracy                           0.38        21\n   macro avg       0.36      0.29      0.29        21\nweighted avg       0.49      0.38      0.39        21\n"
+      },
+      "English": {
+        "model_key": "amaan00z/emotion_xlmr3",
+        "model_name": "XLM-RoBERTa (Hinglish)",
+        "subset": "English",
+        "sample_count": 7,
+        "accuracy_strict": 0.1429,
+        "accuracy_acceptable": 0.1429,
+        "macro_precision": 0.0833,
+        "macro_recall": 0.0833,
+        "macro_f1": 0.0833,
+        "weighted_precision": 0.1429,
+        "weighted_recall": 0.1429,
+        "weighted_f1": 0.1429,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1_score": 0.5,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.14285714285714285,
+          "macro avg": {
+            "precision": 0.08333333333333333,
+            "recall": 0.08333333333333333,
+            "f1-score": 0.08333333333333333,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.14285714285714285,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.14285714285714285,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n  admiration       0.00      0.00      0.00         1\n       anger       0.00      0.00      0.00         1\n        fear       0.00      0.00      0.00         1\n         joy       0.50      0.50      0.50         2\n     neutral       0.00      0.00      0.00         1\n     sadness       0.00      0.00      0.00         1\n\n    accuracy                           0.14         7\n   macro avg       0.08      0.08      0.08         7\nweighted avg       0.14      0.14      0.14         7\n"
+      },
+      "Hindi": {
+        "model_key": "amaan00z/emotion_xlmr3",
+        "model_name": "XLM-RoBERTa (Hinglish)",
+        "subset": "Hindi",
+        "sample_count": 7,
+        "accuracy_strict": 0.5714,
+        "accuracy_acceptable": 0.5714,
+        "macro_precision": 0.4722,
+        "macro_recall": 0.5833,
+        "macro_f1": 0.4722,
+        "weighted_precision": 0.5476,
+        "weighted_recall": 0.5714,
+        "weighted_f1": 0.5,
+        "active_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1_score": 0.6667,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6667,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.3333,
+            "recall": 1.0,
+            "f1_score": 0.5,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1-score": 0.5,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.5714285714285714,
+          "macro avg": {
+            "precision": 0.47222222222222215,
+            "recall": 0.5833333333333334,
+            "f1-score": 0.47222222222222215,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.5476190476190477,
+            "recall": 0.5714285714285714,
+            "f1-score": 0.5,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n disapproval       0.00      0.00      0.00         1\n        fear       0.50      1.00      0.67         1\n         joy       1.00      0.50      0.67         2\n     neutral       0.33      1.00      0.50         1\n     sadness       1.00      1.00      1.00         1\n    surprise       0.00      0.00      0.00         1\n\n    accuracy                           0.57         7\n   macro avg       0.47      0.58      0.47         7\nweighted avg       0.55      0.57      0.50         7\n"
+      },
+      "Hinglish": {
+        "model_key": "amaan00z/emotion_xlmr3",
+        "model_name": "XLM-RoBERTa (Hinglish)",
+        "subset": "Hinglish",
+        "sample_count": 7,
+        "accuracy_strict": 0.4286,
+        "accuracy_acceptable": 0.4286,
+        "macro_precision": 0.3667,
+        "macro_recall": 0.5,
+        "macro_f1": 0.4,
+        "weighted_precision": 0.3333,
+        "weighted_recall": 0.4286,
+        "weighted_f1": 0.3571,
+        "active_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.3333,
+            "recall": 1.0,
+            "f1_score": 0.5,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1_score": 0.5,
+            "support": 2,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1-score": 0.5,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 2.0
+          },
+          "accuracy": 0.42857142857142855,
+          "macro avg": {
+            "precision": 0.36666666666666664,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.35714285714285715,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n       anger       1.00      1.00      1.00         1\n        fear       0.33      1.00      0.50         1\n         joy       0.00      0.00      0.00         2\n     neutral       0.00      0.00      0.00         1\n     sadness       0.50      0.50      0.50         2\n\n    accuracy                           0.43         7\n   macro avg       0.37      0.50      0.40         7\nweighted avg       0.33      0.43      0.36         7\n"
+      }
+    },
+    "bhadresh-savani/distilbert-base-uncased-emotion": {
+      "Overall": {
+        "model_key": "bhadresh-savani/distilbert-base-uncased-emotion",
+        "model_name": "DistilBERT (English)",
+        "subset": "Overall",
+        "sample_count": 21,
+        "accuracy_strict": 0.381,
+        "accuracy_acceptable": 0.5238,
+        "macro_precision": 0.2153,
+        "macro_recall": 0.2708,
+        "macro_f1": 0.1861,
+        "weighted_precision": 0.3069,
+        "weighted_recall": 0.381,
+        "weighted_f1": 0.2846,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 0.2222,
+            "recall": 1.0,
+            "f1_score": 0.3636,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.3333,
+            "f1_score": 0.5,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.5,
+            "recall": 0.8333,
+            "f1_score": 0.625,
+            "support": 6,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 4,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              5,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 0.2222222222222222,
+            "recall": 1.0,
+            "f1-score": 0.36363636363636365,
+            "support": 2.0
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.5,
+            "support": 3.0
+          },
+          "joy": {
+            "precision": 0.5,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.625,
+            "support": 6.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.38095238095238093,
+          "macro avg": {
+            "precision": 0.2152777777777778,
+            "recall": 0.2708333333333333,
+            "f1-score": 0.18607954545454547,
+            "support": 21.0
+          },
+          "weighted avg": {
+            "precision": 0.30687830687830686,
+            "recall": 0.38095238095238093,
+            "f1-score": 0.2846320346320346,
+            "support": 21.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n  admiration       0.00      0.00      0.00         1\n       anger       0.22      1.00      0.36         2\n disapproval       0.00      0.00      0.00         1\n        fear       1.00      0.33      0.50         3\n         joy       0.50      0.83      0.62         6\n     neutral       0.00      0.00      0.00         3\n     sadness       0.00      0.00      0.00         4\n    surprise       0.00      0.00      0.00         1\n\n    accuracy                           0.38        21\n   macro avg       0.22      0.27      0.19        21\nweighted avg       0.31      0.38      0.28        21\n"
+      },
+      "English": {
+        "model_key": "bhadresh-savani/distilbert-base-uncased-emotion",
+        "model_name": "DistilBERT (English)",
+        "subset": "English",
+        "sample_count": 7,
+        "accuracy_strict": 0.5714,
+        "accuracy_acceptable": 0.7143,
+        "macro_precision": 0.3333,
+        "macro_recall": 0.4286,
+        "macro_f1": 0.3571,
+        "weighted_precision": 0.4762,
+        "weighted_recall": 0.5714,
+        "weighted_f1": 0.5,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 0.3333,
+            "recall": 1.0,
+            "f1_score": 0.5,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1-score": 0.5,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.5714285714285714,
+          "macro avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.35714285714285715,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.47619047619047616,
+            "recall": 0.5714285714285714,
+            "f1-score": 0.5,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n  admiration       0.00      0.00      0.00         1\n       anger       0.33      1.00      0.50         1\n        fear       1.00      1.00      1.00         1\n         joy       1.00      1.00      1.00         2\n     neutral       0.00      0.00      0.00         1\n     sadness       0.00      0.00      0.00         1\n    surprise       0.00      0.00      0.00         0\n\n    accuracy                           0.57         7\n   macro avg       0.33      0.43      0.36         7\nweighted avg       0.48      0.57      0.50         7\n"
+      },
+      "Hindi": {
+        "model_key": "bhadresh-savani/distilbert-base-uncased-emotion",
+        "model_name": "DistilBERT (English)",
+        "subset": "Hindi",
+        "sample_count": 7,
+        "accuracy_strict": 0.2857,
+        "accuracy_acceptable": 0.4286,
+        "macro_precision": 0.0476,
+        "macro_recall": 0.1667,
+        "macro_f1": 0.0741,
+        "weighted_precision": 0.0816,
+        "weighted_recall": 0.2857,
+        "weighted_f1": 0.127,
+        "active_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.2857,
+            "recall": 1.0,
+            "f1_score": 0.4444,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.2857142857142857,
+            "recall": 1.0,
+            "f1-score": 0.4444444444444444,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.2857142857142857,
+          "macro avg": {
+            "precision": 0.047619047619047616,
+            "recall": 0.16666666666666666,
+            "f1-score": 0.07407407407407407,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.08163265306122448,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.12698412698412698,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n disapproval       0.00      0.00      0.00         1\n        fear       0.00      0.00      0.00         1\n         joy       0.29      1.00      0.44         2\n     neutral       0.00      0.00      0.00         1\n     sadness       0.00      0.00      0.00         1\n    surprise       0.00      0.00      0.00         1\n\n    accuracy                           0.29         7\n   macro avg       0.05      0.17      0.07         7\nweighted avg       0.08      0.29      0.13         7\n"
+      },
+      "Hinglish": {
+        "model_key": "bhadresh-savani/distilbert-base-uncased-emotion",
+        "model_name": "DistilBERT (English)",
+        "subset": "Hinglish",
+        "sample_count": 7,
+        "accuracy_strict": 0.2857,
+        "accuracy_acceptable": 0.4286,
+        "macro_precision": 0.2333,
+        "macro_recall": 0.3,
+        "macro_f1": 0.1905,
+        "weighted_precision": 0.3095,
+        "weighted_recall": 0.2857,
+        "weighted_f1": 0.2313,
+        "active_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "anger": {
+            "precision": 0.1667,
+            "recall": 1.0,
+            "f1_score": 0.2857,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6667,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "anger": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "f1-score": 0.2857142857142857,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.2857142857142857,
+          "macro avg": {
+            "precision": 0.23333333333333334,
+            "recall": 0.3,
+            "f1-score": 0.19047619047619047,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.3095238095238095,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.23129251700680273,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n       anger       0.17      1.00      0.29         1\n        fear       0.00      0.00      0.00         1\n         joy       1.00      0.50      0.67         2\n     neutral       0.00      0.00      0.00         1\n     sadness       0.00      0.00      0.00         2\n\n    accuracy                           0.29         7\n   macro avg       0.23      0.30      0.19         7\nweighted avg       0.31      0.29      0.23         7\n"
+      }
+    },
+    "vashuag/HindiEmotion": {
+      "Overall": {
+        "model_key": "vashuag/HindiEmotion",
+        "model_name": "IndicBERT (Hindi Devanagari)",
+        "subset": "Overall",
+        "sample_count": 21,
+        "accuracy_strict": 0.381,
+        "accuracy_acceptable": 0.4286,
+        "macro_precision": 0.3889,
+        "macro_recall": 0.3519,
+        "macro_f1": 0.3037,
+        "weighted_precision": 0.5357,
+        "weighted_recall": 0.381,
+        "weighted_f1": 0.3508,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "disgust",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1_score": 0.3333,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.3333,
+            "f1_score": 0.5,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.3333,
+            "f1_score": 0.5,
+            "support": 6,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1_score": 0.4,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 4,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "disapproval",
+            "disgust",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              0,
+              2,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1-score": 0.3333333333333333,
+            "support": 2.0
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.5,
+            "support": 3.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.5,
+            "support": 6.0
+          },
+          "neutral": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 3.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4.0
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "accuracy": 0.38095238095238093,
+          "macro avg": {
+            "precision": 0.3888888888888889,
+            "recall": 0.35185185185185186,
+            "f1-score": 0.3037037037037037,
+            "support": 21.0
+          },
+          "weighted avg": {
+            "precision": 0.5357142857142857,
+            "recall": 0.38095238095238093,
+            "f1-score": 0.3507936507936508,
+            "support": 21.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n  admiration       0.00      0.00      0.00         1\n       anger       0.25      0.50      0.33         2\n disapproval       0.00      0.00      0.00         1\n     disgust       0.00      0.00      0.00         0\n        fear       1.00      0.33      0.50         3\n         joy       1.00      0.33      0.50         6\n     neutral       0.25      1.00      0.40         3\n     sadness       0.00      0.00      0.00         4\n    surprise       1.00      1.00      1.00         1\n\n    accuracy                           0.38        21\n   macro avg       0.39      0.35      0.30        21\nweighted avg       0.54      0.38      0.35        21\n"
+      },
+      "English": {
+        "model_key": "vashuag/HindiEmotion",
+        "model_name": "IndicBERT (Hindi Devanagari)",
+        "subset": "English",
+        "sample_count": 7,
+        "accuracy_strict": 0.1429,
+        "accuracy_acceptable": 0.1429,
+        "macro_precision": 0.0238,
+        "macro_recall": 0.1667,
+        "macro_f1": 0.0417,
+        "weighted_precision": 0.0204,
+        "weighted_recall": 0.1429,
+        "weighted_f1": 0.0357,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1_score": 0.25,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.14285714285714285,
+            "recall": 1.0,
+            "f1-score": 0.25,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.14285714285714285,
+          "macro avg": {
+            "precision": 0.023809523809523808,
+            "recall": 0.16666666666666666,
+            "f1-score": 0.041666666666666664,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.02040816326530612,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.03571428571428571,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n  admiration       0.00      0.00      0.00         1\n       anger       0.00      0.00      0.00         1\n        fear       0.00      0.00      0.00         1\n         joy       0.00      0.00      0.00         2\n     neutral       0.14      1.00      0.25         1\n     sadness       0.00      0.00      0.00         1\n\n    accuracy                           0.14         7\n   macro avg       0.02      0.17      0.04         7\nweighted avg       0.02      0.14      0.04         7\n"
+      },
+      "Hindi": {
+        "model_key": "vashuag/HindiEmotion",
+        "model_name": "IndicBERT (Hindi Devanagari)",
+        "subset": "Hindi",
+        "sample_count": 7,
+        "accuracy_strict": 0.7143,
+        "accuracy_acceptable": 0.7143,
+        "macro_precision": 0.5556,
+        "macro_recall": 0.6667,
+        "macro_f1": 0.5833,
+        "weighted_precision": 0.619,
+        "weighted_recall": 0.7143,
+        "weighted_f1": 0.6429,
+        "active_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.3333,
+            "recall": 1.0,
+            "f1_score": 0.5,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1-score": 0.5,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "accuracy": 0.7142857142857143,
+          "macro avg": {
+            "precision": 0.5555555555555556,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5833333333333334,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.6190476190476192,
+            "recall": 0.7142857142857143,
+            "f1-score": 0.6428571428571429,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n disapproval       0.00      0.00      0.00         1\n        fear       1.00      1.00      1.00         1\n         joy       1.00      1.00      1.00         2\n     neutral       0.33      1.00      0.50         1\n     sadness       0.00      0.00      0.00         1\n    surprise       1.00      1.00      1.00         1\n\n    accuracy                           0.71         7\n   macro avg       0.56      0.67      0.58         7\nweighted avg       0.62      0.71      0.64         7\n"
+      },
+      "Hinglish": {
+        "model_key": "vashuag/HindiEmotion",
+        "model_name": "IndicBERT (Hindi Devanagari)",
+        "subset": "Hinglish",
+        "sample_count": 7,
+        "accuracy_strict": 0.2857,
+        "accuracy_acceptable": 0.4286,
+        "macro_precision": 0.125,
+        "macro_recall": 0.3333,
+        "macro_f1": 0.1778,
+        "weighted_precision": 0.1071,
+        "weighted_recall": 0.2857,
+        "weighted_f1": 0.1524,
+        "active_classes": [
+          "anger",
+          "disgust",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "anger": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1_score": 0.4,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1_score": 0.6667,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "anger",
+            "disgust",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "anger": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 1.0
+          },
+          "disgust": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.2857142857142857,
+          "macro avg": {
+            "precision": 0.125,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.17777777777777778,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.10714285714285714,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.15238095238095237,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n       anger       0.25      1.00      0.40         1\n     disgust       0.00      0.00      0.00         0\n        fear       0.00      0.00      0.00         1\n         joy       0.00      0.00      0.00         2\n     neutral       0.50      1.00      0.67         1\n     sadness       0.00      0.00      0.00         2\n\n    accuracy                           0.29         7\n   macro avg       0.12      0.33      0.18         7\nweighted avg       0.11      0.29      0.15         7\n"
+      }
+    },
+    "SamLowe/roberta-base-go_emotions": {
+      "Overall": {
+        "model_key": "SamLowe/roberta-base-go_emotions",
+        "model_name": "RoBERTa (English GoEmotions)",
+        "subset": "Overall",
+        "sample_count": 21,
+        "accuracy_strict": 0.2381,
+        "accuracy_acceptable": 0.3333,
+        "macro_precision": 0.1875,
+        "macro_recall": 0.2083,
+        "macro_f1": 0.1722,
+        "weighted_precision": 0.1786,
+        "weighted_recall": 0.2381,
+        "weighted_f1": 0.1683,
+        "active_classes": [
+          "admiration",
+          "amusement",
+          "anger",
+          "disappointment",
+          "disapproval",
+          "excitement",
+          "fear",
+          "joy",
+          "nervousness",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "amusement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1_score": 0.6667,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 6,
+            "in_reference_set": true
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "neutral": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1_score": 0.4,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 4,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "amusement",
+            "anger",
+            "disappointment",
+            "disapproval",
+            "excitement",
+            "fear",
+            "joy",
+            "nervousness",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              4,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "amusement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1-score": 0.6666666666666666,
+            "support": 2.0
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 6.0
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "neutral": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 3.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 4.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.23809523809523808,
+          "macro avg": {
+            "precision": 0.1875,
+            "recall": 0.20833333333333334,
+            "f1-score": 0.1722222222222222,
+            "support": 21.0
+          },
+          "weighted avg": {
+            "precision": 0.17857142857142858,
+            "recall": 0.23809523809523808,
+            "f1-score": 0.16825396825396824,
+            "support": 21.0
+          }
+        },
+        "classification_report_text": "                precision    recall  f1-score   support\n\n    admiration       1.00      1.00      1.00         1\n     amusement       0.00      0.00      0.00         0\n         anger       1.00      0.50      0.67         2\ndisappointment       0.00      0.00      0.00         0\n   disapproval       0.00      0.00      0.00         1\n    excitement       0.00      0.00      0.00         0\n          fear       0.00      0.00      0.00         3\n           joy       0.00      0.00      0.00         6\n   nervousness       0.00      0.00      0.00         0\n       neutral       0.25      1.00      0.40         3\n       sadness       0.00      0.00      0.00         4\n      surprise       0.00      0.00      0.00         1\n\n      accuracy                           0.24        21\n     macro avg       0.19      0.21      0.17        21\n  weighted avg       0.18      0.24      0.17        21\n"
+      },
+      "English": {
+        "model_key": "SamLowe/roberta-base-go_emotions",
+        "model_name": "RoBERTa (English GoEmotions)",
+        "subset": "English",
+        "sample_count": 7,
+        "accuracy_strict": 0.4286,
+        "accuracy_acceptable": 0.7143,
+        "macro_precision": 0.3,
+        "macro_recall": 0.3,
+        "macro_f1": 0.3,
+        "weighted_precision": 0.4286,
+        "weighted_recall": 0.4286,
+        "weighted_f1": 0.4286,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "disappointment",
+          "excitement",
+          "fear",
+          "joy",
+          "nervousness",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "disappointment",
+            "excitement",
+            "fear",
+            "joy",
+            "nervousness",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.42857142857142855,
+          "macro avg": {
+            "precision": 0.3,
+            "recall": 0.3,
+            "f1-score": 0.3,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.42857142857142855,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.42857142857142855,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "                precision    recall  f1-score   support\n\n    admiration       1.00      1.00      1.00         1\n         anger       1.00      1.00      1.00         1\ndisappointment       0.00      0.00      0.00         0\n    excitement       0.00      0.00      0.00         0\n          fear       0.00      0.00      0.00         1\n           joy       0.00      0.00      0.00         2\n   nervousness       0.00      0.00      0.00         0\n       neutral       1.00      1.00      1.00         1\n       sadness       0.00      0.00      0.00         1\n      surprise       0.00      0.00      0.00         0\n\n      accuracy                           0.43         7\n     macro avg       0.30      0.30      0.30         7\n  weighted avg       0.43      0.43      0.43         7\n"
+      },
+      "Hindi": {
+        "model_key": "SamLowe/roberta-base-go_emotions",
+        "model_name": "RoBERTa (English GoEmotions)",
+        "subset": "Hindi",
+        "sample_count": 7,
+        "accuracy_strict": 0.1429,
+        "accuracy_acceptable": 0.1429,
+        "macro_precision": 0.0238,
+        "macro_recall": 0.1667,
+        "macro_f1": 0.0417,
+        "weighted_precision": 0.0204,
+        "weighted_recall": 0.1429,
+        "weighted_f1": 0.0357,
+        "active_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.1429,
+            "recall": 1.0,
+            "f1_score": 0.25,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.14285714285714285,
+            "recall": 1.0,
+            "f1-score": 0.25,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "accuracy": 0.14285714285714285,
+          "macro avg": {
+            "precision": 0.023809523809523808,
+            "recall": 0.16666666666666666,
+            "f1-score": 0.041666666666666664,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.02040816326530612,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.03571428571428571,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n disapproval       0.00      0.00      0.00         1\n        fear       0.00      0.00      0.00         1\n         joy       0.00      0.00      0.00         2\n     neutral       0.14      1.00      0.25         1\n     sadness       0.00      0.00      0.00         1\n    surprise       0.00      0.00      0.00         1\n\n    accuracy                           0.14         7\n   macro avg       0.02      0.17      0.04         7\nweighted avg       0.02      0.14      0.04         7\n"
+      },
+      "Hinglish": {
+        "model_key": "SamLowe/roberta-base-go_emotions",
+        "model_name": "RoBERTa (English GoEmotions)",
+        "subset": "Hinglish",
+        "sample_count": 7,
+        "accuracy_strict": 0.1429,
+        "accuracy_acceptable": 0.1429,
+        "macro_precision": 0.0417,
+        "macro_recall": 0.1667,
+        "macro_f1": 0.0667,
+        "weighted_precision": 0.0357,
+        "weighted_recall": 0.1429,
+        "weighted_f1": 0.0571,
+        "active_classes": [
+          "amusement",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "amusement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "anger": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1_score": 0.4,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "amusement",
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "amusement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "anger": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "accuracy": 0.14285714285714285,
+          "macro avg": {
+            "precision": 0.041666666666666664,
+            "recall": 0.16666666666666666,
+            "f1-score": 0.06666666666666667,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.03571428571428571,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.05714285714285715,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n   amusement       0.00      0.00      0.00         0\n       anger       0.00      0.00      0.00         1\n        fear       0.00      0.00      0.00         1\n         joy       0.00      0.00      0.00         2\n     neutral       0.25      1.00      0.40         1\n     sadness       0.00      0.00      0.00         2\n\n    accuracy                           0.14         7\n   macro avg       0.04      0.17      0.07         7\nweighted avg       0.04      0.14      0.06         7\n"
+      }
+    },
+    "ensemble": {
+      "Overall": {
+        "model_key": "ensemble",
+        "model_name": "EmoSync Language-Routed Ensemble",
+        "subset": "Overall",
+        "sample_count": 21,
+        "accuracy_strict": 0.5238,
+        "accuracy_acceptable": 0.619,
+        "macro_precision": 0.4455,
+        "macro_recall": 0.447,
+        "macro_f1": 0.4156,
+        "weighted_precision": 0.6762,
+        "weighted_recall": 0.5238,
+        "weighted_f1": 0.534,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "disappointment",
+          "disapproval",
+          "excitement",
+          "fear",
+          "joy",
+          "nervousness",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "fear": {
+            "precision": 0.5,
+            "recall": 0.6667,
+            "f1_score": 0.5714,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.3333,
+            "f1_score": 0.5,
+            "support": 6,
+            "in_reference_set": true
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "neutral": {
+            "precision": 0.4,
+            "recall": 0.6667,
+            "f1_score": 0.5,
+            "support": 3,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1_score": 0.3333,
+            "support": 4,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1_score": 0.6667,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "disappointment",
+            "disapproval",
+            "excitement",
+            "fear",
+            "joy",
+            "nervousness",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              2,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "fear": {
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5714285714285714,
+            "support": 3.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.5,
+            "support": 6.0
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "neutral": {
+            "precision": 0.4,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5,
+            "support": 3.0
+          },
+          "sadness": {
+            "precision": 0.5,
+            "recall": 0.25,
+            "f1-score": 0.3333333333333333,
+            "support": 4.0
+          },
+          "surprise": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "accuracy": 0.5238095238095238,
+          "macro avg": {
+            "precision": 0.4454545454545455,
+            "recall": 0.4469696969696969,
+            "f1-score": 0.41558441558441556,
+            "support": 21.0
+          },
+          "weighted avg": {
+            "precision": 0.6761904761904761,
+            "recall": 0.5238095238095238,
+            "f1-score": 0.5340136054421769,
+            "support": 21.0
+          }
+        },
+        "classification_report_text": "                precision    recall  f1-score   support\n\n    admiration       1.00      1.00      1.00         1\n         anger       1.00      1.00      1.00         2\ndisappointment       0.00      0.00      0.00         0\n   disapproval       0.00      0.00      0.00         1\n    excitement       0.00      0.00      0.00         0\n          fear       0.50      0.67      0.57         3\n           joy       1.00      0.33      0.50         6\n   nervousness       0.00      0.00      0.00         0\n       neutral       0.40      0.67      0.50         3\n       sadness       0.50      0.25      0.33         4\n      surprise       0.50      1.00      0.67         1\n\n      accuracy                           0.52        21\n     macro avg       0.45      0.45      0.42        21\n  weighted avg       0.68      0.52      0.53        21\n"
+      },
+      "English": {
+        "model_key": "ensemble",
+        "model_name": "EmoSync Language-Routed Ensemble",
+        "subset": "English",
+        "sample_count": 7,
+        "accuracy_strict": 0.4286,
+        "accuracy_acceptable": 0.7143,
+        "macro_precision": 0.3,
+        "macro_recall": 0.3,
+        "macro_f1": 0.3,
+        "weighted_precision": 0.4286,
+        "weighted_recall": 0.4286,
+        "weighted_f1": 0.4286,
+        "active_classes": [
+          "admiration",
+          "anger",
+          "disappointment",
+          "excitement",
+          "fear",
+          "joy",
+          "nervousness",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "admiration",
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 0,
+            "in_reference_set": false
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "admiration",
+            "anger",
+            "disappointment",
+            "excitement",
+            "fear",
+            "joy",
+            "nervousness",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "admiration": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "disappointment": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "excitement": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "fear": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "nervousness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "neutral": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "accuracy": 0.42857142857142855,
+          "macro avg": {
+            "precision": 0.3,
+            "recall": 0.3,
+            "f1-score": 0.3,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.42857142857142855,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.42857142857142855,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "                precision    recall  f1-score   support\n\n    admiration       1.00      1.00      1.00         1\n         anger       1.00      1.00      1.00         1\ndisappointment       0.00      0.00      0.00         0\n    excitement       0.00      0.00      0.00         0\n          fear       0.00      0.00      0.00         1\n           joy       0.00      0.00      0.00         2\n   nervousness       0.00      0.00      0.00         0\n       neutral       1.00      1.00      1.00         1\n       sadness       0.00      0.00      0.00         1\n      surprise       0.00      0.00      0.00         0\n\n      accuracy                           0.43         7\n     macro avg       0.30      0.30      0.30         7\n  weighted avg       0.43      0.43      0.43         7\n"
+      },
+      "Hindi": {
+        "model_key": "ensemble",
+        "model_name": "EmoSync Language-Routed Ensemble",
+        "subset": "Hindi",
+        "sample_count": 7,
+        "accuracy_strict": 0.7143,
+        "accuracy_acceptable": 0.7143,
+        "macro_precision": 0.5556,
+        "macro_recall": 0.6667,
+        "macro_f1": 0.5833,
+        "weighted_precision": 0.619,
+        "weighted_recall": 0.7143,
+        "weighted_f1": 0.6429,
+        "active_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "reference_classes": [
+          "disapproval",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness",
+          "surprise"
+        ],
+        "per_class": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.3333,
+            "recall": 1.0,
+            "f1_score": 0.5,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "disapproval",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness",
+            "surprise"
+          ],
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "disapproval": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1-score": 0.5,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "surprise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "accuracy": 0.7142857142857143,
+          "macro avg": {
+            "precision": 0.5555555555555556,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5833333333333334,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.6190476190476192,
+            "recall": 0.7142857142857143,
+            "f1-score": 0.6428571428571429,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n disapproval       0.00      0.00      0.00         1\n        fear       1.00      1.00      1.00         1\n         joy       1.00      1.00      1.00         2\n     neutral       0.33      1.00      0.50         1\n     sadness       0.00      0.00      0.00         1\n    surprise       1.00      1.00      1.00         1\n\n    accuracy                           0.71         7\n   macro avg       0.56      0.67      0.58         7\nweighted avg       0.62      0.71      0.64         7\n"
+      },
+      "Hinglish": {
+        "model_key": "ensemble",
+        "model_name": "EmoSync Language-Routed Ensemble",
+        "subset": "Hinglish",
+        "sample_count": 7,
+        "accuracy_strict": 0.4286,
+        "accuracy_acceptable": 0.4286,
+        "macro_precision": 0.3667,
+        "macro_recall": 0.5,
+        "macro_f1": 0.4,
+        "weighted_precision": 0.3333,
+        "weighted_recall": 0.4286,
+        "weighted_f1": 0.3571,
+        "active_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "reference_classes": [
+          "anger",
+          "fear",
+          "joy",
+          "neutral",
+          "sadness"
+        ],
+        "per_class": {
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1_score": 1.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "fear": {
+            "precision": 0.3333,
+            "recall": 1.0,
+            "f1_score": 0.5,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 2,
+            "in_reference_set": true
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0,
+            "support": 1,
+            "in_reference_set": true
+          },
+          "sadness": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1_score": 0.5,
+            "support": 2,
+            "in_reference_set": true
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "anger",
+            "fear",
+            "joy",
+            "neutral",
+            "sadness"
+          ],
+          "matrix": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        "classification_report_dict": {
+          "anger": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "fear": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1-score": 0.5,
+            "support": 1.0
+          },
+          "joy": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 2.0
+          },
+          "neutral": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "sadness": {
+            "precision": 0.5,
+            "recall": 0.5,
+            "f1-score": 0.5,
+            "support": 2.0
+          },
+          "accuracy": 0.42857142857142855,
+          "macro avg": {
+            "precision": 0.36666666666666664,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 7.0
+          },
+          "weighted avg": {
+            "precision": 0.3333333333333333,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.35714285714285715,
+            "support": 7.0
+          }
+        },
+        "classification_report_text": "              precision    recall  f1-score   support\n\n       anger       1.00      1.00      1.00         1\n        fear       0.33      1.00      0.50         1\n         joy       0.00      0.00      0.00         2\n     neutral       0.00      0.00      0.00         1\n     sadness       0.50      0.50      0.50         2\n\n    accuracy                           0.43         7\n   macro avg       0.37      0.50      0.40         7\nweighted avg       0.33      0.43      0.36         7\n"
+      }
+    }
+  }
+}

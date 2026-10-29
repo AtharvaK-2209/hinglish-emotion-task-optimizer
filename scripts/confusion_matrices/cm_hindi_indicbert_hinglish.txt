@@ -1,0 +1,25 @@
+Confusion Matrix: IndicBERT (Hindi Devanagari) [Hinglish] (N=7)
+Strict Accuracy: 28.6% | Acceptable: 42.9%
+
+True \ Pred  |   anger | disgust |    fear |     joy | neutral | sadness
+------------------------------------------------------------------------
+anger        |       1 |       0 |       0 |       0 |       0 |       0
+disgust      |       0 |       0 |       0 |       0 |       0 |       0
+fear         |       0 |       0 |       0 |       0 |       1 |       0
+joy          |       2 |       0 |       0 |       0 |       0 |       0
+neutral      |       0 |       0 |       0 |       0 |       1 |       0
+sadness      |       1 |       1 |       0 |       0 |       0 |       0
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger       0.25      1.00      0.40         1
+     disgust       0.00      0.00      0.00         0
+        fear       0.00      0.00      0.00         1
+         joy       0.00      0.00      0.00         2
+     neutral       0.50      1.00      0.67         1
+     sadness       0.00      0.00      0.00         2
+
+    accuracy                           0.29         7
+   macro avg       0.12      0.33      0.18         7
+weighted avg       0.11      0.29      0.15         7

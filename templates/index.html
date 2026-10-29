@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Task Optimizer: Text-Based Hinglish Emotion Analysis</title>
-    <meta name="description" content="AI-Powered Task Optimizer with multilingual Hinglish emotion classification and task recommendations.">
+    <title>EmoSync — Emotion-Aware Productivity Assistant</title>
+    <meta name="description" content="EmoSync: Emotion-Aware Productivity Assistant. Understand your emotions. Find your flow. Multilingual emotion analysis in English, Hindi, and Hinglish.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,74 +12,181 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
+        <!-- App Header -->
         <header class="app-header">
-            <div class="header-badge">
-                <span class="status-dot online"></span>
-                <span>Phase 1 Initialized</span>
-            </div>
-            <h1 class="app-title">AI-Powered Task Optimizer</h1>
-            <p class="app-subtitle">Text-Based Hinglish Emotion Analysis &amp; Productivity Assistant</p>
+            <h1 class="app-title">EmoSync</h1>
+            <p class="app-subtitle">Emotion-Aware Productivity Assistant</p>
+            <p class="app-tagline">Understand your emotions. Find your flow.</p>
         </header>
 
-        <!-- Main Card -->
+        <!-- Main Content -->
         <main class="main-content">
-            <section class="card overview-card">
+            <!-- Input & Analysis Card -->
+            <section class="card input-card" id="input-section">
                 <div class="card-header">
-                    <h2>Project Architecture Overview</h2>
-                    <span class="phase-pill">Academic Mini-Project (Phase 1)</span>
+                    <h2>Input Natural Language Text</h2>
+                    <span class="badge-lang">English &bull; Hindi (हिंदी) &bull; Hinglish</span>
                 </div>
-                <p class="description">
-                    This project optimizes workflow and task planning based on emotional tone detected in 
-                    <strong>English</strong>, <strong>Hindi</strong>, and <strong>Hinglish</strong> user inputs.
+                
+                <p class="input-description">
+                    Enter your thoughts, daily updates, or feelings in English, Hindi (Devanagari), or Romanized Hinglish. The system evaluates emotional tone and recommends tailored task strategies.
                 </p>
 
-                <!-- Architecture Modules Grid -->
-                <div class="modules-grid">
-                    <div class="module-card">
-                        <div class="module-icon">🤖</div>
-                        <h3>Emotion Classifier</h3>
-                        <p>Pretrained Hugging Face model: <code>amaan00z/emotion_xlmr3</code></p>
-                        <div class="module-status">
-                            <span class="badge" id="classifier-status">Ready for Phase 2 Integration</span>
-                        </div>
+                <!-- Quick Samples -->
+                <div class="sample-pills-container">
+                    <span class="sample-label">Try sample:</span>
+                    <button type="button" class="sample-pill" data-text="I am really excited about my results!">English (Joy)</button>
+                    <button type="button" class="sample-pill" data-text="मुझे आज बहुत खुशी हो रही है।">Hindi (खुशी)</button>
+                    <button type="button" class="sample-pill" data-text="Yaar, aaj bahut tension ho raha hai.">Hinglish (Tension)</button>
+                    <button type="button" class="sample-pill" data-text="The project presentation is scheduled for 10 AM tomorrow.">Neutral (Schedule)</button>
+                </div>
+
+                <!-- Text Area Input Form -->
+                <form id="analyze-form" novalidate>
+                    <div class="textarea-wrapper">
+                        <textarea 
+                            id="input-text" 
+                            name="text" 
+                            rows="4" 
+                            maxlength="1000"
+                            placeholder="Type or paste your text here (e.g., 'Yaar kal presentation hai aur abhi tak slide ready nahi hui...')..."
+                            required
+                        ></textarea>
                     </div>
 
-                    <div class="module-card">
-                        <div class="module-icon">🔤</div>
-                        <h3>NLTK Processor</h3>
-                        <p>Linguistic preprocessing, tokenization, and text metric extraction.</p>
-                        <div class="module-status">
-                            <span class="badge" id="nltk-status">Ready for Phase 2 Integration</span>
+                    <div class="form-toolbar">
+                        <span id="char-counter" class="char-counter">0 / 1000 chars</span>
+                        <div class="button-group">
+                            <button type="button" id="btn-clear" class="btn btn-secondary">Clear</button>
+                            <button type="submit" id="btn-analyze" class="btn btn-primary">
+                                <span class="btn-spinner" id="btn-spinner" aria-hidden="true"></span>
+                                <span id="btn-text">Analyze Emotion &amp; Tasks</span>
+                            </button>
                         </div>
                     </div>
+                </form>
 
-                    <div class="module-card">
-                        <div class="module-icon">⚡</div>
-                        <h3>Recommendation Engine</h3>
-                        <p>Emotion-informed task scheduling and optimization heuristics.</p>
-                        <div class="module-status">
-                            <span class="badge" id="recom-status">Ready for Phase 2 Integration</span>
-                        </div>
-                    </div>
+                <!-- Error Alert Box -->
+                <div id="error-alert" class="alert alert-error" role="alert" style="display: none;">
+                    <span class="alert-icon">⚠️</span>
+                    <span id="error-message" class="alert-text"></span>
                 </div>
             </section>
 
-            <!-- Backend Health Card -->
-            <section class="card health-card">
-                <div class="card-header">
-                    <h2>Backend Health &amp; API Status</h2>
-                    <button id="btn-check-health" class="btn btn-secondary">Refresh Status</button>
+            <!-- Results Section (Initially Hidden) -->
+            <section id="results-section" class="results-container" style="display: none;">
+                <!-- Header with Action -->
+                <div class="results-header">
+                    <h2>Analysis Results</h2>
+                    <button type="button" id="btn-new-analysis" class="btn btn-secondary btn-sm">
+                        ↺ Analyze Another Text
+                    </button>
                 </div>
-                <div id="health-result" class="health-console">
-                    <div class="console-line">Connecting to <code>/api/health</code>...</div>
+
+                <div class="results-grid">
+                    <!-- Column 1: Emotion Prediction & Ranked Scores -->
+                    <div class="card result-card emotion-card">
+                        <div class="card-header">
+                            <h3>Emotion Classification</h3>
+                            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                                <span class="route-badge" id="res-route-badge">🌐 English</span>
+                                <span class="model-tag" id="res-model-id">roberta-base-go_emotions</span>
+                            </div>
+                        </div>
+
+                        <div class="primary-emotion-banner">
+                            <div class="emotion-icon-circle" id="res-emotion-icon">🎯</div>
+                            <div class="emotion-meta">
+                                <span class="emotion-subhead">Predicted State</span>
+                                <h4 class="emotion-name" id="res-emotion-label">Neutral</h4>
+                                <div class="confidence-pill" id="res-confidence-pill">Confidence: 99.8%</div>
+                                <div class="router-info-pill" id="res-router-info" style="font-size: 0.72rem; color: #94a3b8; margin-top: 4px;">Standard English text detected</div>
+                            </div>
+                        </div>
+
+                        <div class="ranked-distribution-section">
+                            <h5>Ranked Emotion Distribution</h5>
+                            <div id="ranked-scores-list" class="ranked-scores-list">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: NLTK Linguistic Processing Metrics -->
+                    <div class="card result-card nltk-card">
+                        <div class="card-header">
+                            <h3>NLTK Linguistic Analysis</h3>
+                            <span class="script-tag" id="res-script-tag">Latin (English / Hinglish)</span>
+                        </div>
+
+                        <!-- Statistics Grid -->
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-number" id="stat-words">0</span>
+                                <span class="stat-title">Lexical Words</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number" id="stat-tokens">0</span>
+                                <span class="stat-title">NLTK Tokens</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number" id="stat-chars">0</span>
+                                <span class="stat-title">Characters</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number" id="stat-sentences">1</span>
+                                <span class="stat-title">Sentences</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number" id="stat-avg-length">0.0</span>
+                                <span class="stat-title">Avg Word Length</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number" id="stat-vocab">0</span>
+                                <span class="stat-title">Vocabulary Size</span>
+                            </div>
+                        </div>
+
+                        <!-- Top Frequency Words -->
+                        <div class="frequency-section">
+                            <h5>Top Word Frequencies</h5>
+                            <div id="top-words-chips" class="top-words-chips">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Recommendation Engine -->
+                <div class="card result-card recommendations-card">
+                    <div class="card-header">
+                        <div class="rec-header-titles">
+                            <h3>Productivity &amp; Task Recommendations</h3>
+                            <p class="rec-subtitle" id="rec-strategy-title">Primary Strategy: Balanced Execution</p>
+                        </div>
+                        <span class="rec-strategy-badge" id="rec-strategy-badge">Adaptive Strategy</span>
+                    </div>
+
+                    <p class="rec-summary" id="rec-summary-text">
+                        Loading contextual productivity recommendations based on detected emotion...
+                    </p>
+
+                    <!-- Suggestions Grid -->
+                    <div id="suggestions-list" class="suggestions-grid">
+                        <!-- Populated dynamically -->
+                    </div>
+
+                    <div class="rec-disclaimer">
+                        <span>ℹ️</span>
+                        <span>Recommendations are supportive heuristics for workflow optimization and do not constitute clinical psychological or mental health diagnosis.</span>
+                    </div>
                 </div>
             </section>
         </main>
 
         <!-- Footer -->
         <footer class="app-footer">
-            <p>&copy; 2026 AI-Powered Task Optimizer &bull; SEM 5 AI Academic Mini-Project</p>
+            <p>&copy; 2026 EmoSync &bull; Emotion-Aware Productivity Assistant &bull; Multilingual Emotion Analysis</p>
         </footer>
     </div>
 

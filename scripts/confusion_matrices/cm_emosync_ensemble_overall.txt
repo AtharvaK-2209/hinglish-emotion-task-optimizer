@@ -1,0 +1,35 @@
+Confusion Matrix: EmoSync Language-Routed Ensemble [Overall] (N=21)
+Strict Accuracy: 52.4% | Acceptable: 61.9%
+
+True \ Pred        | admirat |   anger | disappo | disappr | excitem |    fear |     joy | nervous | neutral | sadness | surpris
+--------------------------------------------------------------------------------------------------------------------------------
+admiration         |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+anger              |       0 |       2 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+disappointment     |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+disapproval        |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+excitement         |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+fear               |       0 |       0 |       0 |       0 |       0 |       2 |       0 |       1 |       0 |       0 |       0
+joy                |       0 |       0 |       0 |       0 |       1 |       1 |       2 |       0 |       0 |       1 |       1
+nervousness        |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+neutral            |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0 |       2 |       0 |       0
+sadness            |       0 |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       2 |       1 |       0
+surprise           |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       1
+
+Classification Report:
+                precision    recall  f1-score   support
+
+    admiration       1.00      1.00      1.00         1
+         anger       1.00      1.00      1.00         2
+disappointment       0.00      0.00      0.00         0
+   disapproval       0.00      0.00      0.00         1
+    excitement       0.00      0.00      0.00         0
+          fear       0.50      0.67      0.57         3
+           joy       1.00      0.33      0.50         6
+   nervousness       0.00      0.00      0.00         0
+       neutral       0.40      0.67      0.50         3
+       sadness       0.50      0.25      0.33         4
+      surprise       0.50      1.00      0.67         1
+
+      accuracy                           0.52        21
+     macro avg       0.45      0.45      0.42        21
+  weighted avg       0.68      0.52      0.53        21

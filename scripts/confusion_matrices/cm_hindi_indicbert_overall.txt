@@ -1,0 +1,31 @@
+Confusion Matrix: IndicBERT (Hindi Devanagari) [Overall] (N=21)
+Strict Accuracy: 38.1% | Acceptable: 42.9%
+
+True \ Pred     | admirat |   anger | disappr | disgust |    fear |     joy | neutral | sadness | surpris
+---------------------------------------------------------------------------------------------------------
+admiration      |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+anger           |       0 |       1 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+disapproval     |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+disgust         |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+fear            |       0 |       0 |       0 |       0 |       1 |       0 |       2 |       0 |       0
+joy             |       0 |       2 |       0 |       0 |       0 |       2 |       2 |       0 |       0
+neutral         |       0 |       0 |       0 |       0 |       0 |       0 |       3 |       0 |       0
+sadness         |       0 |       1 |       0 |       1 |       0 |       0 |       2 |       0 |       0
+surprise        |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       1
+
+Classification Report:
+              precision    recall  f1-score   support
+
+  admiration       0.00      0.00      0.00         1
+       anger       0.25      0.50      0.33         2
+ disapproval       0.00      0.00      0.00         1
+     disgust       0.00      0.00      0.00         0
+        fear       1.00      0.33      0.50         3
+         joy       1.00      0.33      0.50         6
+     neutral       0.25      1.00      0.40         3
+     sadness       0.00      0.00      0.00         4
+    surprise       1.00      1.00      1.00         1
+
+    accuracy                           0.38        21
+   macro avg       0.39      0.35      0.30        21
+weighted avg       0.54      0.38      0.35        21

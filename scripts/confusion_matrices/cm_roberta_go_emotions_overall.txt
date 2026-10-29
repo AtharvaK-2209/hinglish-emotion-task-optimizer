@@ -1,0 +1,37 @@
+Confusion Matrix: RoBERTa (English GoEmotions) [Overall] (N=21)
+Strict Accuracy: 23.8% | Acceptable: 33.3%
+
+True \ Pred        | admirat | amuseme |   anger | disappo | disappr | excitem |    fear |     joy | nervous | neutral | sadness | surpris
+------------------------------------------------------------------------------------------------------------------------------------------
+admiration         |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+amusement          |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+anger              |       0 |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+disappointment     |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+disapproval        |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+excitement         |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+fear               |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       1 |       0 |       0
+joy                |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0 |       0 |       4 |       0 |       1
+nervousness        |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+neutral            |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       3 |       0 |       0
+sadness            |       0 |       2 |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+surprise           |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+
+Classification Report:
+                precision    recall  f1-score   support
+
+    admiration       1.00      1.00      1.00         1
+     amusement       0.00      0.00      0.00         0
+         anger       1.00      0.50      0.67         2
+disappointment       0.00      0.00      0.00         0
+   disapproval       0.00      0.00      0.00         1
+    excitement       0.00      0.00      0.00         0
+          fear       0.00      0.00      0.00         3
+           joy       0.00      0.00      0.00         6
+   nervousness       0.00      0.00      0.00         0
+       neutral       0.25      1.00      0.40         3
+       sadness       0.00      0.00      0.00         4
+      surprise       0.00      0.00      0.00         1
+
+      accuracy                           0.24        21
+     macro avg       0.19      0.21      0.17        21
+  weighted avg       0.18      0.24      0.17        21

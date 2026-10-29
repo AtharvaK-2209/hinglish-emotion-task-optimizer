@@ -1,0 +1,25 @@
+Confusion Matrix: XLM-RoBERTa (Hinglish) [English] (N=7)
+Strict Accuracy: 14.3% | Acceptable: 14.3%
+
+True \ Pred    | admirat |   anger |    fear |     joy | neutral | sadness
+--------------------------------------------------------------------------
+admiration     |       0 |       0 |       0 |       0 |       1 |       0
+anger          |       0 |       0 |       0 |       0 |       1 |       0
+fear           |       0 |       0 |       0 |       0 |       1 |       0
+joy            |       0 |       0 |       0 |       1 |       1 |       0
+neutral        |       0 |       0 |       0 |       1 |       0 |       0
+sadness        |       0 |       0 |       0 |       0 |       1 |       0
+
+Classification Report:
+              precision    recall  f1-score   support
+
+  admiration       0.00      0.00      0.00         1
+       anger       0.00      0.00      0.00         1
+        fear       0.00      0.00      0.00         1
+         joy       0.50      0.50      0.50         2
+     neutral       0.00      0.00      0.00         1
+     sadness       0.00      0.00      0.00         1
+
+    accuracy                           0.14         7
+   macro avg       0.08      0.08      0.08         7
+weighted avg       0.14      0.14      0.14         7

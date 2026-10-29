@@ -25,7 +25,7 @@ def test_index_route(client):
     """Verify that root route '/' renders the landing page with HTTP 200."""
     response = client.get("/")
     assert response.status_code == 200
-    assert b"AI-Powered Task Optimizer" in response.data
+    assert b"EmoSync" in response.data
 
 
 def test_health_check_route(client):
@@ -36,26 +36,29 @@ def test_health_check_route(client):
 
     data = response.get_json()
     assert data["status"] == "healthy"
-    assert data["phase"] == 1
+    assert data["phase"] in [1, 4]
     assert "services" in data
     assert "emotion_classifier" in data["services"]
     assert "nltk_processor" in data["services"]
     assert "recommendation_engine" in data["services"]
 
 
-def test_emotion_classifier_phase1_state():
-    """Verify EmotionClassifier initializes without loading heavy transformer weights."""
+def test_emotion_classifier_unloaded_state():
+    """Verify EmotionClassifier initializes without loading heavy transformer weights when load_on_init=False."""
     classifier = EmotionClassifier(load_on_init=False)
     status = classifier.get_status()
     assert status["loaded"] is False
     assert status["model_name"] == "amaan00z/emotion_xlmr3"
 
-    # Ensure predict and load_model raise NotImplementedError during Phase 1
-    with pytest.raises(NotImplementedError):
-        classifier.load_model()
+    # Fast offline input validation tests (does not trigger model download)
+    with pytest.raises(ValueError):
+        classifier.validate_input("")
 
-    with pytest.raises(NotImplementedError):
-        classifier.predict("Test sentence")
+    with pytest.raises(ValueError):
+        classifier.validate_input("   ")
+
+    with pytest.raises(TypeError):
+        classifier.validate_input(12345)
 
 
 def test_nltk_processor_phase1_state():

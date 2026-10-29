@@ -1,0 +1,33 @@
+Confusion Matrix: RoBERTa (English GoEmotions) [English] (N=7)
+Strict Accuracy: 42.9% | Acceptable: 71.4%
+
+True \ Pred        | admirat |   anger | disappo | excitem |    fear |     joy | nervous | neutral | sadness | surpris
+----------------------------------------------------------------------------------------------------------------------
+admiration         |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+anger              |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+disappointment     |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+excitement         |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+fear               |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0 |       0
+joy                |       0 |       0 |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       1
+nervousness        |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+neutral            |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       1 |       0 |       0
+sadness            |       0 |       0 |       1 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+surprise           |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0 |       0
+
+Classification Report:
+                precision    recall  f1-score   support
+
+    admiration       1.00      1.00      1.00         1
+         anger       1.00      1.00      1.00         1
+disappointment       0.00      0.00      0.00         0
+    excitement       0.00      0.00      0.00         0
+          fear       0.00      0.00      0.00         1
+           joy       0.00      0.00      0.00         2
+   nervousness       0.00      0.00      0.00         0
+       neutral       1.00      1.00      1.00         1
+       sadness       0.00      0.00      0.00         1
+      surprise       0.00      0.00      0.00         0
+
+      accuracy                           0.43         7
+     macro avg       0.30      0.30      0.30         7
+  weighted avg       0.43      0.43      0.43         7

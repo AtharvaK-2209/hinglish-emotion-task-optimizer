@@ -1,0 +1,27 @@
+Confusion Matrix: DistilBERT (English) [English] (N=7)
+Strict Accuracy: 57.1% | Acceptable: 71.4%
+
+True \ Pred    | admirat |   anger |    fear |     joy | neutral | sadness | surpris
+------------------------------------------------------------------------------------
+admiration     |       0 |       0 |       0 |       0 |       0 |       0 |       1
+anger          |       0 |       1 |       0 |       0 |       0 |       0 |       0
+fear           |       0 |       0 |       1 |       0 |       0 |       0 |       0
+joy            |       0 |       0 |       0 |       2 |       0 |       0 |       0
+neutral        |       0 |       1 |       0 |       0 |       0 |       0 |       0
+sadness        |       0 |       1 |       0 |       0 |       0 |       0 |       0
+surprise       |       0 |       0 |       0 |       0 |       0 |       0 |       0
+
+Classification Report:
+              precision    recall  f1-score   support
+
+  admiration       0.00      0.00      0.00         1
+       anger       0.33      1.00      0.50         1
+        fear       1.00      1.00      1.00         1
+         joy       1.00      1.00      1.00         2
+     neutral       0.00      0.00      0.00         1
+     sadness       0.00      0.00      0.00         1
+    surprise       0.00      0.00      0.00         0
+
+    accuracy                           0.57         7
+   macro avg       0.33      0.43      0.36         7
+weighted avg       0.48      0.57      0.50         7
